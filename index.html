@@ -1,64 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muzammil Khan's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Muhammad Muzammil Khan - Cybersecurity Specialist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
-    <!-- Navbar Section -->
-    <header>
-        <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="/#">Home</a></li>
-                <li><a href="./badgs/">My TryHackme badgs</a></li>
-                <li><a href="/certificates/">My Certificates</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="cursor"></div>
 
-    <!-- Main Content Section -->
-    <section class="main-content">
-        <div class="profile-picture">
-            <img src="myimage.jpg" alt="Muzammil Khan's Picture">
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">MMK</a>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="menu-btn">
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+                <div class="btn-line"></div>
+            </div>
         </div>
-        <div class="profile-info">
-            <h1>Muhammad Muzammil Khan</h1>
-            <p>Penetration Tester</p>
-        </div>
+    </nav>
 
-        <!-- Social Media Icons -->
-        <div class="social-media">
-            <a href="https://wa.me/+923192025919" class="social-icon linkedin" target="_blank">
-                <img src="WhatsApp_icon.png" alt="WhatsApp">
-            </a>
-            <a href="mailto:muzammil.khan92@hotmail.com" class="social-icon email" target="_blank">
-                <img src="email-icon.png" alt="Email">
-            </a>
-            <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" class="social-icon linkedin" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn">
-            </a>
-            <a href="https://tryhackme.com/r/p/muzammil.khan" class="social-icon tryhackme" target="_blank">
-                <img src="tryhackme-icon.svg" alt="TryHackMe">
-            </a>
-            <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" class="social-icon facebook" target="_blank">
-                <img src="facebook-icon.webp" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/muzammil.attari.26/" class="social-icon instagram" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram">
-            </a>
-            <a href="https://x.com/muzammil26m" class="social-icon twitter" target="_blank">
-                <img src="twitter-icon.png" alt="Twitter">
-            </a>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="glitch" data-text="Muhammad">Muhammad</span>
+                            <span class="glitch" data-text="Muzammil">Muzammil</span>
+                            <span class="glitch" data-text="Khan">Khan</span>
+                        </h1>
+                        <h2 class="hero-subtitle">Cybersecurity Specialist</h2>
+                        <p class="hero-description">Penetration Tester & Ethical Hacking Specialist</p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn primary-btn">Get in Touch</a>
+                            <a href="#about" class="btn secondary-btn">Learn More</a>
+                            <a href="Muhammad_Muzammil_khan_CV.pdf" download class="btn secondary-btn">
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/myimage.jpg-dvWbfkUZ2LLKVrpguT51zgV0MvangL.jpeg"
+                                alt="Muhammad Muzammil Khan">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Footer Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        Aspiring penetration tester with a solid foundation in cybersecurity, skilled in
+                        vulnerability assessments, network scanning, and ethical hacking. My unique blend of
+                        religious education and technical expertise allows me to approach cybersecurity challenges
+                        with a holistic perspective.
+                    </p>
+                    <div class="tryhackme-stats"><a href="https://tryhackme.com/r/p/muzammil.khan">
+                        <iframe 
+                            src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2561231" 
+                            style="border:none; width:200%; height:100%;"
+                            title="TryHackMe Profile Badge"
+                        ></iframe></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <div class="education-header">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h3>Academic Education</h3>
+                        </div>
+                        <ul class="education-list">
+                            <li>
+                                <span class="degree">M.A</span>
+                                <span class="institution">Kanz ul Madaris Board</span>
+                            </li>
+                            <li>
+                                <span class="degree">B.A</span>
+                                <span class="institution">Tanzeem ul Madaris</span>
+                            </li>
+                            <li>
+                                <span class="degree">F.A</span>
+                                <span class="institution">Tanzeem ul Madaris</span>
+                            </li>
+                            <li>
+                                <span class="degree">Matric</span>
+                                <span class="institution">Tanzeem ul Madaris</span>
+                            </li>
+                            <li>
+                                <span class="degree">Dars-e-Nizami (Alim Course)</span>
+                                <span class="institution">Dawat-e-Islami</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="education-card">
+                        <div class="education-header">
+                            <i class="fas fa-certificate"></i>
+                            <h3>Professional Certifications</h3>
+                        </div>
+                        <ul class="education-list">
+                            <li>
+                                <span class="certification">Jr Penetration Tester</span>
+                                <span class="institution">TryHackMe</span>
+                            </li>
+                            <li>
+                                <span class="certification">CompTIA Pentest+</span>
+                                <span class="institution">TryHackMe</span>
+                            </li>
+                            <li>
+                                <span class="certification">Ethical Hacking</span>
+                                <span class="institution">Bano Qabil</span>
+                            </li>
+                            <li>
+                                <span class="certification">Adv. Diploma in IT</span>
+                                <span class="institution">I.C.S Institute</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="section">
+            <div class="container">
+                <h2 class="section-title reveal">My Certificates</h2>
+                <div class="certificates-wrapper">
+                    <div class="certificate-slider">
+                        <div class="certificate-slide">
+                            <a href="https://tryhackme.com/r/certificate/THM-6I7MZAHWKL" target="_blank">
+                            <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-6I7MZAHWKL.png"
+                                alt="Certificate 1"></a>
+                        </div>
+                        <div class="certificate-slide">
+                            <a href="https://tryhackme.com/r/certificate/THM-V9W18SXJBK" target="_blank">
+                            <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-V9W18SXJBK.png"
+                                alt="Certificate 2"></a>
+                        </div>
+                        <div class="certificate-slide">
+                            <a href="https://tryhackme.com/r/certificate/THM-WEFUWUAMHL" target="_blank">
+                            <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-WEFUWUAMHL.png"
+                                alt="Certificate 3"></a>
+                        </div>
+                        <div class="certificate-slide">
+                            <a href="https://tryhackme.com/r/certificate/THM-JPJFYXRSLY" target="_blank">
+                            <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-JPJFYXRSLY.png"
+                                alt="Certificate 4"></a>
+                        </div>
+                        <div class="certificate-slide">
+                            <a href="https://tryhackme.com/r/certificate/THM-8NGC8M2SJZ" target="_blank">
+                            <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-8NGC8M2SJZ.png"
+                                alt="Certificate 5"></a>
+                        </div>
+                        <div class="certificate-slide">
+                            <a href="https://www.udemy.com/certificate/UC-ad683839-819a-443d-a8d2-adaa9341aab8/?" target="_blank">
+                            <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-ad683839-819a-443d-a8d2-adaa9341aab8.jpg"
+                                alt="Certificate 6"></a>
+                        </div>
+                    </div>
+                    <button class="slider-btn prev-btn" aria-label="Previous certificate">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next-btn" aria-label="Next certificate">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects & Experience</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Network Scanning</h3>
+                            <p>Conducted comprehensive network scanning using Nmap and Wireshark, identifying potential
+                                vulnerabilities and security gaps.</p>
+                            <div class="tech">TryHackMe | Bano Qabil</div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Web App Hacking</h3>
+                            <p>Successfully exploited SQL injection and Cross-Site Scripting (XSS) vulnerabilities using
+                                Burp Suite, demonstrating the importance of secure coding practices.</p>
+                            <div class="tech">TryHackMe | Bano Qabil</div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-content">
+                            <h3>Privilege Escalation</h3>
+                            <p>Mastered various privilege escalation techniques for both Windows and Linux environments,
+                                enhancing system security knowledge.</p>
+                            <div class="tech">TryHackMe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-content">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-shield-alt"></i> Penetration Testing</h3>
+                        <ul class="skill-list">
+                            <li>Vulnerability Assessment</li>
+                            <li>Exploit Development</li>
+                            <li>Network Security</li>
+                            <li>Web Application Security</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> Tools Proficiency</h3>
+                        <div class="tools-grid">
+                            <span>Nmap</span>
+                            <span>Burp Suite</span>
+                            <span>Metasploit</span>
+                            <span>Wireshark</span>
+                            <span>Hydra</span>
+                            <span>SQLMap</span>
+                            <span>FFUF</span>
+                            <span>Hashcat</span>
+                            <span>John the Ripper</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Scripting and Programming</h3>
+                        <ul class="skill-list">
+                            <li>Python</li>
+                            <li>JavaScript</li>
+                            <li>Bash Scripting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><i class="fas fa-envelope"></i>muzammil.khan92@hotmail.com</p>
+                        <p><i class="fas fa-phone"></i> +92-319-2025919</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://github.com/muzammilkhan26/" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <textarea placeholder="Message" required></textarea>
+                        <button type="submit" class="btn primary-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2024 Muzammil Khan. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Muhammad Muzammil Khan. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
 </body>
+
 </html>
+
