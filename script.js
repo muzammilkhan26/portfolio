@@ -285,3 +285,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".contact-form button").addEventListener("click", (e) => {
+      e.preventDefault();
+      sendEmail();
+  });
+});
+
+function sendEmail() {
+  const name = document.querySelector('input[type="text"]').value.trim();
+  const email = document.querySelector('input[type="email"]').value.trim();
+  const message = document.querySelector("textarea").value.trim();
+
+  if (name && email && message) {
+      const mailtoLink = `mailto:muzammil.khan92@hotmail.com?subject=New Message from ${name}&body=Email: ${email}%0A%0AMessage:%0A${message}`;
+      window.location.href = mailtoLink;
+  } else {
+      alert("Please fill in all fields.");
+  }
+}
