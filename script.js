@@ -304,3 +304,23 @@ function sendEmail() {
       alert("Please fill in all fields.");
   }
 }
+// Scroll to top functionality
+const scrollToTopButton = document.getElementById("scroll-to-top")
+
+// Show button when scrolling down
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 300) {
+    // Show button after 300px scroll
+    scrollToTopButton.classList.add("visible")
+  } else {
+    scrollToTopButton.classList.remove("visible")
+  }
+})
+
+// Smooth scroll to top when button is clicked
+scrollToTopButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+})
