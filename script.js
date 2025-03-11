@@ -1,262 +1,429 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Custom cursor
-  const cursor = document.querySelector(".cursor")
-  const cursorFollower = document.querySelector(".cursor-follower")
+  // Preloader
+  const preloader = document.querySelector(".preloader")
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      preloader.style.opacity = "0"
+      preloader.style.visibility = "hidden"
+
+      // Start animations after preloader is gone
+      animateSkillBars()
+      initAOS()
+    }, 1500)
+  })
+
+  // Custom Cursor
+  const cursorDot = document.querySelector(".cursor-dot")
+  const cursorOutline = document.querySelector(".cursor-outline")
+  const cursorGlow = document.querySelector(".cursor-glow")
 
   document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px"
-    cursor.style.top = e.clientY + "px"
+    const posX = e.clientX
+    const posY = e.clientY
 
-    setTimeout(() => {
-      cursorFollower.style.left = e.clientX + "px"
-      cursorFollower.style.top = e.clientY + "px"
-    }, 50)
+    cursorDot.style.left = `${posX}px`
+    cursorDot.style.top = `${posY}px`
+
+    cursorOutline.style.left = `${posX}px`
+    cursorOutline.style.top = `${posY}px`
+
+    cursorGlow.style.left = `${posX}px`
+    cursorGlow.style.top = `${posY}px`
   })
 
-  document.addEventListener("mousedown", () => {
-    cursor.style.transform = "scale(0.7)"
-    cursorFollower.style.transform = "scale(1.2)"
-  })
+  // Cursor effects for interactive elements
+  const interactiveElements = document.querySelectorAll(
+    "a, button, .menu-btn, .certificate-card, .tool-item, .social-links a",
+  )
 
-  document.addEventListener("mouseup", () => {
-    cursor.style.transform = "scale(1)"
-    cursorFollower.style.transform = "scale(1)"
-  })
-
-  // Hover effect for links and buttons
-  const interactiveElements = document.querySelectorAll("a, button, .menu-btn, .slider-btn")
   interactiveElements.forEach((el) => {
     el.addEventListener("mouseenter", () => {
-      cursor.style.transform = "scale(1.5)"
-      cursorFollower.style.transform = "scale(1.5)"
+      cursorDot.style.transform = "translate(-50%, -50%) scale(1.5)"
+      cursorOutline.style.transform = "translate(-50%, -50%) scale(1.5)"
+      cursorOutline.style.borderColor = "var(--accent-primary)"
+      cursorGlow.style.transform = "translate(-50%, -50%) scale(1.5)"
+      cursorGlow.style.opacity = "0.8"
     })
+
     el.addEventListener("mouseleave", () => {
-      cursor.style.transform = "scale(1)"
-      cursorFollower.style.transform = "scale(1)"
+      cursorDot.style.transform = "translate(-50%, -50%) scale(1)"
+      cursorOutline.style.transform = "translate(-50%, -50%) scale(1)"
+      cursorOutline.style.borderColor = "var(--accent-primary)"
+      cursorGlow.style.transform = "translate(-50%, -50%) scale(1)"
+      cursorGlow.style.opacity = "0.5"
     })
   })
 
-  // Mobile menu functionality
+  // Hide cursor when mouse leaves window
+  document.addEventListener("mouseleave", () => {
+    cursorDot.style.opacity = "0"
+    cursorOutline.style.opacity = "0"
+    cursorGlow.style.opacity = "0"
+  })
+
+  document.addEventListener("mouseenter", () => {
+    cursorDot.style.opacity = "1"
+    cursorOutline.style.opacity = "1"
+    cursorGlow.style.opacity = "0.5"
+  })
+
+  // Particle Background
+  function initParticles() {
+    const canvas = document.getElementById("particles-canvas")
+    const ctx = canvas.getContext("2d")
+
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+
+    const particles = []
+    const particleCount = 100
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width
+        this.y = Math.random() * canvas.height
+        this.size = Math.random() * 2 + 0.5
+        this.speedX = Math.random() * 0.5 - 0.25
+        this.speedY = Math.random() * 0.5 - 0.25
+        this.color = "var(--accent-primary)"
+        this.opacity = Math.random() * 0.5 + 0.1
+      }
+
+      update() {
+        this.x += this.speedX
+        this.y += this.speedY
+
+        if (this.x > canvas.width) this.x = 0
+        else if (this.x < 0) this.x = canvas.width
+
+        if (this.y > canvas.height) this.y = 0
+        else if (this.y < 0) this.y = canvas.height
+      }
+
+      draw() {
+        ctx.fillStyle = this.color
+        ctx.globalAlpha = this.opacity
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
+        ctx.fill()
+      }
+    }
+
+    function createParticles() {
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle())
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update()
+        particles[i].draw()
+
+        // Connect particles with lines
+        for (let j = i; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x
+          const dy = particles[i].y - particles[j].y
+          const distance = Math.sqrt(dx * dx + dy * dy)
+
+          if (distance < 100) {
+            ctx.beginPath()
+            ctx.strokeStyle = "var(--accent-primary)"
+            ctx.globalAlpha = 0.1 * (1 - distance / 100)
+            ctx.lineWidth = 0.5
+            ctx.moveTo(particles[i].x, particles[i].y)
+            ctx.lineTo(particles[j].x, particles[j].y)
+            ctx.stroke()
+          }
+        }
+      }
+
+      requestAnimationFrame(animateParticles)
+    }
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+    })
+
+    createParticles()
+    animateParticles()
+  }
+
+  initParticles()
+
+  // Header Scroll Effect
+  const header = document.querySelector(".header")
+  const progressFill = document.querySelector(".progress-fill")
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled")
+    } else {
+      header.classList.remove("scrolled")
+    }
+
+    // Update progress bar
+    const scrollTop = window.scrollY
+    const docHeight = document.body.offsetHeight
+    const winHeight = window.innerHeight
+    const scrollPercent = scrollTop / (docHeight - winHeight)
+    progressFill.style.width = `${scrollPercent * 100}%`
+  })
+
+  // Mobile Menu
   const menuBtn = document.querySelector(".menu-btn")
   const navLinks = document.querySelector(".nav-links")
-  let menuOpen = false
 
   menuBtn.addEventListener("click", () => {
-    if (!menuOpen) {
-      menuBtn.classList.add("active")
-      navLinks.classList.add("active")
-      menuOpen = true
+    menuBtn.classList.toggle("open")
+    navLinks.classList.toggle("active")
+
+    // Prevent scrolling when menu is open
+    if (navLinks.classList.contains("active")) {
+      document.body.style.overflow = "hidden"
     } else {
-      menuBtn.classList.remove("active")
-      navLinks.classList.remove("active")
-      menuOpen = false
+      document.body.style.overflow = ""
     }
   })
 
   // Close menu when clicking on a link
-  const navLinksArray = document.querySelectorAll(".nav-links a")
-  navLinksArray.forEach((link) => {
+  document.querySelectorAll(".nav-links a").forEach((link) => {
     link.addEventListener("click", () => {
-      menuBtn.classList.remove("active")
+      menuBtn.classList.remove("open")
       navLinks.classList.remove("active")
-      menuOpen = false
+      document.body.style.overflow = ""
     })
   })
 
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".navbar") && menuOpen) {
-      menuBtn.classList.remove("active")
-      navLinks.classList.remove("active")
-      menuOpen = false
+  // Typed Text Effect
+  function typeWriter() {
+    const typedTextElement = document.querySelector(".typed-text")
+    const cursorElement = document.querySelector(".cursor")
+    const textArray = ["Cybersecurity Specialist", "Penetration Tester", "Ethical Hacker", "Security Researcher"]
+    let textArrayIndex = 0
+    let charIndex = 0
+    let isDeleting = false
+    let typingSpeed = 100
+
+    function type() {
+      const currentText = textArray[textArrayIndex]
+
+      if (isDeleting) {
+        typedTextElement.textContent = currentText.substring(0, charIndex - 1)
+        charIndex--
+        typingSpeed = 50
+      } else {
+        typedTextElement.textContent = currentText.substring(0, charIndex + 1)
+        charIndex++
+        typingSpeed = 100
+      }
+
+      if (!isDeleting && charIndex === currentText.length) {
+        isDeleting = true
+        typingSpeed = 1000 // Pause at end
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false
+        textArrayIndex = (textArrayIndex + 1) % textArray.length
+        typingSpeed = 500 // Pause before typing next
+      }
+
+      setTimeout(type, typingSpeed)
     }
+
+    if (typedTextElement) {
+      setTimeout(type, 1000)
+    }
+  }
+
+  typeWriter()
+
+  // Education Tabs
+  const tabBtns = document.querySelectorAll(".tab-btn")
+  const tabPanels = document.querySelectorAll(".tab-panel")
+  const tabIndicator = document.querySelector(".tab-indicator")
+
+  function setActiveTab(index) {
+    tabBtns.forEach((btn) => btn.classList.remove("active"))
+    tabPanels.forEach((panel) => panel.classList.remove("active"))
+
+    tabBtns[index].classList.add("active")
+    tabPanels[index].classList.add("active")
+
+    // Update indicator position
+    if (tabIndicator) {
+      const activeBtn = tabBtns[index]
+      tabIndicator.style.width = `${activeBtn.offsetWidth}px`
+      tabIndicator.style.left = `${activeBtn.offsetLeft}px`
+    }
+  }
+
+  tabBtns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      setActiveTab(index)
+    })
   })
 
-  // Smooth scrolling
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault()
-      const target = document.querySelector(this.getAttribute("href"))
-      const offset = 80 // Height of fixed navbar
-      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset
+  // Initialize first tab
+  if (tabBtns.length > 0) {
+    setActiveTab(0)
+  }
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth",
+  // Certificate Slider
+  const certificateSlider = document.querySelector(".certificate-slider")
+  const certificateSlides = document.querySelectorAll(".certificate-slide")
+  const prevBtn = document.querySelector(".prev-btn")
+  const nextBtn = document.querySelector(".next-btn")
+  const paginationContainer = document.querySelector(".slider-pagination")
+
+  let currentIndex = 0
+  let slidesToShow = getSlidesToShow()
+
+  function getSlidesToShow() {
+    if (window.innerWidth <= 768) return 1
+    if (window.innerWidth <= 1200) return 2
+    return 3
+  }
+
+  function createPagination() {
+    if (!paginationContainer) return
+
+    paginationContainer.innerHTML = ""
+    const totalPages = Math.ceil(certificateSlides.length / slidesToShow)
+
+    for (let i = 0; i < totalPages; i++) {
+      const dot = document.createElement("div")
+      dot.classList.add("pagination-dot")
+      if (i === 0) dot.classList.add("active")
+
+      dot.addEventListener("click", () => {
+        goToSlide(i * slidesToShow)
       })
-    })
-  })
 
-  // Active section highlighting
-  const sections = document.querySelectorAll(".section")
-  const navItems = document.querySelectorAll(".nav-links a")
+      paginationContainer.appendChild(dot)
+    }
+  }
 
-  window.addEventListener("scroll", () => {
-    let current = ""
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop
-      const sectionHeight = section.clientHeight
-      if (pageYOffset >= sectionTop - sectionHeight / 3) {
-        current = section.getAttribute("id")
-      }
-    })
+  function updatePagination() {
+    if (!paginationContainer) return
 
-    navItems.forEach((item) => {
-      item.classList.remove("active")
-      if (item.getAttribute("href").slice(1) === current) {
-        item.classList.add("active")
-      }
-    })
-  })
+    const dots = paginationContainer.querySelectorAll(".pagination-dot")
+    const activePage = Math.floor(currentIndex / slidesToShow)
 
-  // Reveal animations
-  const revealElements = document.querySelectorAll(".reveal")
-  const revealElementsOnScroll = () => {
-    revealElements.forEach((element) => {
-      const elementTop = element.getBoundingClientRect().top
-      const elementVisible = 150
-      if (elementTop < window.innerHeight - elementVisible) {
-        element.classList.add("active")
-      }
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === activePage)
     })
   }
 
-  window.addEventListener("scroll", revealElementsOnScroll)
-  revealElementsOnScroll() // Initial check on page load
+  function goToSlide(index) {
+    currentIndex = index
+    const slideWidth = certificateSlider.clientWidth / slidesToShow
+    certificateSlider.style.transform = `translateX(-${currentIndex * slideWidth}px)`
+    updatePagination()
+  }
 
-  // Certificate slider functionality
-  function initCertificateSlider() {
-    const slider = document.querySelector(".certificate-slider")
-    const slides = document.querySelectorAll(".certificate-slide")
-    const prevBtn = document.querySelector(".prev-btn")
-    const nextBtn = document.querySelector(".next-btn")
-
-    let currentIndex = 0
-
-    function getSlidesToShow() {
-      if (window.innerWidth <= 768) return 1
-      if (window.innerWidth <= 1024) return 2
-      return 3
+  function nextSlide() {
+    if (currentIndex < certificateSlides.length - slidesToShow) {
+      goToSlide(currentIndex + 1)
+    } else {
+      goToSlide(0) // Loop back to start
     }
+  }
 
-    function updateSlider() {
-      const slidesToShow = getSlidesToShow()
-      const slideWidth = slider.clientWidth / slidesToShow
-      const offset = -currentIndex * slideWidth
-
-      slider.style.transform = `translateX(${offset}px)`
-
-      slides.forEach((slide, index) => {
-        if (index >= currentIndex && index < currentIndex + slidesToShow) {
-          slide.classList.add("active")
-        } else {
-          slide.classList.remove("active")
-        }
-      })
-
-      // Update button states
-      prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1"
-      nextBtn.style.opacity = currentIndex >= slides.length - slidesToShow ? "0.5" : "1"
+  function prevSlide() {
+    if (currentIndex > 0) {
+      goToSlide(currentIndex - 1)
+    } else {
+      goToSlide(certificateSlides.length - slidesToShow) // Loop to end
     }
+  }
 
-    function nextSlide() {
-      const slidesToShow = getSlidesToShow()
-      if (currentIndex < slides.length - slidesToShow) {
-        currentIndex++
-        updateSlider()
-      }
-    }
-
-    function prevSlide() {
-      if (currentIndex > 0) {
-        currentIndex--
-        updateSlider()
-      }
-    }
+  if (certificateSlider && certificateSlides.length > 0) {
+    // Initialize slider
+    createPagination()
 
     // Event listeners
-    nextBtn.addEventListener("click", nextSlide)
-    prevBtn.addEventListener("click", prevSlide)
+    if (prevBtn) prevBtn.addEventListener("click", prevSlide)
+    if (nextBtn) nextBtn.addEventListener("click", nextSlide)
 
-    // Touch events for mobile
-    let touchStartX = 0
-    let touchEndX = 0
+    // Auto slide
+    let slideInterval = setInterval(nextSlide, 5000)
 
-    slider.addEventListener(
-      "touchstart",
-      (e) => {
-        touchStartX = e.changedTouches[0].screenX
-      },
-      { passive: true },
-    )
-
-    slider.addEventListener(
-      "touchend",
-      (e) => {
-        touchEndX = e.changedTouches[0].screenX
-        if (touchStartX - touchEndX > 50) {
-          nextSlide()
-        } else if (touchEndX - touchStartX > 50) {
-          prevSlide()
-        }
-      },
-      { passive: true },
-    )
-
-    // Update on resize
-    let resizeTimer
-    window.addEventListener("resize", () => {
-      clearTimeout(resizeTimer)
-      resizeTimer = setTimeout(() => {
-        currentIndex = 0
-        updateSlider()
-      }, 250)
+    certificateSlider.addEventListener("mouseenter", () => {
+      clearInterval(slideInterval)
     })
 
-    // Initial setup
-    updateSlider()
+    certificateSlider.addEventListener("mouseleave", () => {
+      slideInterval = setInterval(nextSlide, 5000)
+    })
+
+    // Flip cards on click
+    certificateSlides.forEach((slide) => {
+      const card = slide.querySelector(".certificate-card")
+      if (card) {
+        card.addEventListener("click", () => {
+          card.classList.toggle("flipped")
+        })
+      }
+    })
+
+    // Update on resize
+    window.addEventListener("resize", () => {
+      const newSlidesToShow = getSlidesToShow()
+      if (newSlidesToShow !== slidesToShow) {
+        slidesToShow = newSlidesToShow
+        createPagination()
+        goToSlide(0)
+      }
+    })
   }
 
-  // Initialize certificate slider
-  initCertificateSlider()
+  // Skill Progress Bars
+  function animateSkillBars() {
+    const skillBars = document.querySelectorAll(".skill-progress")
 
-  // Glitch text effect
-  const glitchTexts = document.querySelectorAll(".glitch")
-  glitchTexts.forEach((text) => {
-    text.setAttribute("data-text", text.textContent)
-  })
+    skillBars.forEach((bar) => {
+      const percent = bar.getAttribute("data-percent")
+      bar.style.width = `${percent}%`
+    })
+  }
 
-  // Loading animation
-  window.addEventListener("load", () => {
-    const loader = document.querySelector(".loading")
-    if (loader) {
-      loader.style.opacity = "0"
-      setTimeout(() => {
-        loader.style.display = "none"
-      }, 500)
+  // Scroll to Top Button
+  const scrollToTopBtn = document.getElementById("scroll-to-top")
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      scrollToTopBtn.classList.add("visible")
+    } else {
+      scrollToTopBtn.classList.remove("visible")
     }
   })
 
-  // Parallax effect for hero section
-  const heroSection = document.querySelector("#home")
-  window.addEventListener("scroll", () => {
-    const scrollPosition = window.pageYOffset
-    heroSection.style.backgroundPositionY = scrollPosition * 0.7 + "px"
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
   })
 
-  // Form submission with validation
-  const contactForm = document.querySelector(".contact-form")
+  // Contact Form
+  const contactForm = document.getElementById("contact-form")
+
   if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault()
-      const name = contactForm.querySelector('input[type="text"]').value
-      const email = contactForm.querySelector('input[type="email"]').value
-      const message = contactForm.querySelector("textarea").value
+
+      const name = document.getElementById("name").value.trim()
+      const email = document.getElementById("email").value.trim()
+      const message = document.getElementById("message").value.trim()
 
       if (name && email && message) {
-        // Here you would typically send the form data to a server
-        console.log("Form submitted:", { name, email, message })
-        alert("Thank you for your message! I will get back to you soon.")
+        const mailtoLink = `mailto:muzammil.khan92@hotmail.com?subject=Contact from ${name}&body=From: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${message}`
+        window.location.href = mailtoLink
+
+        // Reset form
         contactForm.reset()
       } else {
         alert("Please fill in all fields.")
@@ -264,63 +431,90 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
-  // Typing effect for hero subtitle
-  function typeWriter(element, text, speed = 50) {
-    let i = 0
-    function type() {
-      if (i < text.length) {
-        element.textContent += text.charAt(i)
-        i++
-        setTimeout(type, speed)
+  // Smooth Scrolling for Anchor Links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault()
+
+      const targetId = this.getAttribute("href")
+      const targetElement = document.querySelector(targetId)
+
+      if (targetElement) {
+        const headerHeight = document.querySelector(".header").offsetHeight
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        })
       }
-    }
-    type()
+    })
+  })
+
+  // Active Navigation Link on Scroll
+  function updateActiveNavLink() {
+    const sections = document.querySelectorAll("section")
+    const navLinks = document.querySelectorAll(".nav-links a")
+
+    let currentSection = ""
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+      const headerHeight = document.querySelector(".header").offsetHeight
+
+      if (window.pageYOffset >= sectionTop - headerHeight - 100) {
+        currentSection = section.getAttribute("id")
+      }
+    })
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active")
+      if (link.getAttribute("href") === `#${currentSection}`) {
+        link.classList.add("active")
+      }
+    })
   }
 
-  const heroSubtitle = document.querySelector(".hero-subtitle")
-  if (heroSubtitle) {
-    const subtitleText = heroSubtitle.textContent
-    heroSubtitle.textContent = ""
-    typeWriter(heroSubtitle, subtitleText)
+  window.addEventListener("scroll", updateActiveNavLink)
+  updateActiveNavLink()
+
+  // AOS (Animate On Scroll) Initialization
+  function initAOS() {
+    const elements = document.querySelectorAll("[data-aos]")
+    const windowHeight = window.innerHeight
+
+    function checkPosition() {
+      elements.forEach((element) => {
+        const positionFromTop = element.getBoundingClientRect().top
+
+        if (positionFromTop - windowHeight <= -100) {
+          const delay = element.getAttribute("data-aos-delay") || 0
+          setTimeout(() => {
+            element.classList.add("aos-animate")
+          }, delay)
+        }
+      })
+    }
+
+    window.addEventListener("scroll", checkPosition)
+    checkPosition()
   }
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelector(".contact-form button").addEventListener("click", (e) => {
-      e.preventDefault();
-      sendEmail();
-  });
-});
+  // Certificate hover effect enhancement
+  const certificateCards = document.querySelectorAll(".certificate-card")
 
-function sendEmail() {
-  const name = document.querySelector('input[type="text"]').value.trim();
-  const email = document.querySelector('input[type="email"]').value.trim();
-  const message = document.querySelector("textarea").value.trim();
+  certificateCards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      certificateCards.forEach((c) => (c.style.opacity = "0.7"))
+      card.style.opacity = "1"
+    })
 
-  if (name && email && message) {
-      const mailtoLink = `mailto:muzammil.khan92@hotmail.com?subject=New Message from ${name}&body=Email: ${email}%0A%0AMessage:%0A${message}`;
-      window.location.href = mailtoLink;
-  } else {
-      alert("Please fill in all fields.");
-  }
-}
-// Scroll to top functionality
-const scrollToTopButton = document.getElementById("scroll-to-top")
-
-// Show button when scrolling down
-window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 300) {
-    // Show button after 300px scroll
-    scrollToTopButton.classList.add("visible")
-  } else {
-    scrollToTopButton.classList.remove("visible")
-  }
-})
-
-// Smooth scroll to top when button is clicked
-scrollToTopButton.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+    card.addEventListener("mouseleave", () => {
+      certificateCards.forEach((c) => (c.style.opacity = "1"))
+    })
   })
 })
+
