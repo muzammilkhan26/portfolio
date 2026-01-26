@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Muzammil Khan | Cybersecurity Specialist</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Muhammad Muzammil Khan | Penetration Tester</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Meta tags -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Meta Tags -->
     <meta name="description" content="Penetration tester skilled in ethical hacking, vulnerability assessments & network security. Blending technical expertise with a unique perspective!">
     <meta name="keywords" content="penetration testing, ethical hacking, cybersecurity, network security, vulnerability assessment">
     <meta name="author" content="Muhammad Muzammil Khan">
@@ -21,915 +27,960 @@
     <link rel="icon" type="image/png" href="./mylogo.png">
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="scanner">
-                <div class="scan-line"></div>
+    <!-- Loader -->
+    <div class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <span class="bracket">{</span>
+                <span class="logo-text">MMK</span>
+                <span class="bracket">}</span>
             </div>
-            <div class="loading-text">
-                <span>L</span>
-                <span>O</span>
-                <span>A</span>
-                <span>D</span>
-                <span>I</span>
-                <span>N</span>
-                <span>G</span>
-                <span>.</span>
-                <span>.</span>
-                <span>.</span>
+            <div class="loader-text">
+                <span class="loading-char">I</span>
+                <span class="loading-char">N</span>
+                <span class="loading-char">I</span>
+                <span class="loading-char">T</span>
+                <span class="loading-char">I</span>
+                <span class="loading-char">A</span>
+                <span class="loading-char">L</span>
+                <span class="loading-char">I</span>
+                <span class="loading-char">Z</span>
+                <span class="loading-char">I</span>
+                <span class="loading-char">N</span>
+                <span class="loading-char">G</span>
+                <span class="loading-char">.</span>
+                <span class="loading-char">.</span>
+                <span class="loading-char">.</span>
             </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+            <div class="loader-percent">0%</div>
         </div>
     </div>
 
-    <!-- Cursor Elements -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-    <div class="cursor-glow"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="cursor-trail"></div>
 
-    <!-- Particle Background -->
-    <div class="particles-container">
-        <canvas id="particles-canvas"></canvas>
+    <!-- Cyber Grid Background -->
+    <div class="cyber-grid"></div>
+    
+    <!-- Floating Orbs -->
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
 
-    <!-- Header & Navigation -->
-    <header class="header">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a href="#" class="logo">
-    <div class="logo-wrapper">
-        <span class="logo-text">MMK</span>
-        <div class="logo-glitch"></div>
-    </div>
-</a>
-        <nav class="navbar">
-            <div class="nav-progress-bar">
-                <div class="progress-fill"></div>
+            <a class="navbar-brand glitch-hover" href="#" data-text="{MMK}">
+                <span class="brand-bracket">{</span>MMK<span class="brand-bracket">}</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="toggler-line"></span>
+                <span class="toggler-line"></span>
+                <span class="toggler-line"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#hero"><span data-text="Home">Home</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about"><span data-text="About">About</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience"><span data-text="Experience">Experience</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects"><span data-text="Projects">Projects</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education"><span data-text="Education">Education</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications"><span data-text="Certificates">Certificates</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills"><span data-text="Skills">Skills</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><span data-text="Contact">Contact</span></a></li>
+                </ul>
             </div>
-            <ul class="nav-links">
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
-            <div class="menu-btn">
-                <div class="menu-btn__burger"></div>
-            </div>
-        </nav>
-    </div>
-</header>
+        </div>
+    </nav>
 
-    <!-- Side Social Links -->
-    <div class="social-side">
-        <ul class="social-icons">
-            <li><a href="https://www.linkedin.com/in/muhammadmuzammilkhan92" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-            <li><a href="https://github.com/muzammilkhan26" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-        </ul>
-        <div class="social-line"></div>
-    </div>
-
-    <!-- Side Email -->
-    <div class="email-side">
-        <a href="mailto:muzammil.khan92@hotmail.com" class="email-link">muzammil.khan92@hotmail.com</a>
-        <div class="email-line"></div>
-    </div>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <div class="hero-intro" data-aos="fade-up" data-aos-delay="100">Hello, I'm</div>
-                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
-                            <div class="glitch-wrapper">
-                                <div class="glitch" data-text="Muhammad Muzammil Khan">Muhammad Muzammil Khan</div>
-                            </div>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg-text">HACKER</div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <div class="hero-badge" data-aos="fade-right">
+                            <span class="badge-dot"></span>
+                            <span>Available for Projects</span>
+                        </div>
+                        
+                        <h1 class="hero-name">
+                            <span class="line line-1">
+                                <span class="word" data-text="Muhammad">Muhammad</span>
+                            </span>
+                            <span class="line line-2">
+                                <span class="word" data-text="Muzammil">Muzammil</span>
+                            </span>
+                            <span class="line line-3">
+                                <span class="word outline-text" data-text="Khan">Khan</span>
+                            </span>
                         </h1>
-                        <h2 class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
-                            <span class="typed-text"></span><span class="cursor">&nbsp;</span>
-                        </h2>
-                        <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                        
+                        <div class="hero-role">
+                            <span class="role-line"></span>
+                            <span class="role-text">
+                                <span class="static-text">I'm a</span>
+                                <span id="typewriter" class="dynamic-text"></span>
+                                <span class="cursor-blink">|</span>
+                            </span>
+                        </div>
+                        
+                        <p class="hero-description">
                             Specialized in identifying vulnerabilities and securing systems against cyber threats. 
-                            I combine technical expertise with a unique perspective to protect digital assets.
+                            <span class="highlight-text">I combine technical expertise with a unique perspective to protect digital assets.</span>
                         </p>
-                        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">
-                            <a href="#contact" class="btn primary-btn">
+                        
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn-primary-custom magnetic-btn">
                                 <span class="btn-text">Get in Touch</span>
                                 <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
-                                <span class="btn-background"></span>
+                                <span class="btn-bg"></span>
                             </a>
-                            <a href="Muhammad_Muzammil_khan_CV.pdf" download class="btn secondary-btn">
+                            <a href="Muhammad_Muzammil_khan_CV.pdf" download class="btn-secondary-custom magnetic-btn">
                                 <span class="btn-text">Download CV</span>
                                 <span class="btn-icon"><i class="fas fa-download"></i></span>
-                                <span class="btn-background"></span>
+                            </a>
+                        </div>
+                        
+                        <div class="hero-social">
+                            <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" target="_blank" class="social-link magnetic-btn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span class="social-tooltip">LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/muzammilkhan26" target="_blank" class="social-link magnetic-btn" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                                <span class="social-tooltip">GitHub</span>
+                            </a>
+                            <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank" class="social-link magnetic-btn" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span class="social-tooltip">Facebook</span>
+                            </a>
+                            <a href="mailto:muzammil.khan92@hotmail.com" class="social-link magnetic-btn" aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                                <span class="social-tooltip">Email</span>
                             </a>
                         </div>
                     </div>
-                    <div class="hero-image" data-aos="fade-left" data-aos-delay="600">
-                        <div class="image-container">
-                            <div class="image-wrapper">
-                                <img src="./myimage.jpg" alt="Muhammad Muzammil Khan">
-                                <div class="image-overlay"></div>
-                                <div class="image-scanner"></div>
-                            </div>
-                            <div class="image-decoration">
-                                <div class="decoration-circle"></div>
-                                <div class="decoration-line"></div>
-                                <div class="decoration-dot"></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </div>
-            <div class="scroll-indicator">
-                <div class="scroll-text">Scroll Down</div>
-                <div class="scroll-icon">
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-            </div>
-            <div class="hero-background">
-                <div class="bg-grid"></div>
-                <div class="bg-glow"></div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <div class="section-number">01</div>
-                    <h2 class="section-title">About Me</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="about-content">
-                    <div class="about-text" data-aos="fade-right" data-aos-delay="200">
-                        <p>
-                            Aspiring penetration tester with a solid foundation in cybersecurity, skilled in
-                            vulnerability assessments, network scanning, and ethical hacking. My unique blend of
-                            religious education and technical expertise allows me to approach cybersecurity challenges
-                            with a holistic perspective.
-                        </p>
-                        <p>
-                            I'm passionate about identifying security vulnerabilities and helping organizations strengthen their defenses against cyber threats. My experience includes network scanning, web application security testing, and exploit development.
-                        </p>
-                        <div class="about-highlights">
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-shield-alt"></i>
+                <div class="col-lg-5 d-none d-lg-block">
+                    <div class="hero-visual">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <div class="terminal-dots">
+                                    <span class="terminal-dot red"></span>
+                                    <span class="terminal-dot yellow"></span>
+                                    <span class="terminal-dot green"></span>
                                 </div>
-                                <div class="highlight-text">
-                                    <h3>Security First</h3>
-                                    <p>Dedicated to proactive security measures and ethical hacking principles</p>
-                                </div>
+                                <span class="terminal-title">muzammil@kali:~</span>
                             </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-search"></i>
+                            <div class="terminal-body">
+                                <div class="terminal-line" data-delay="0">
+                                    <span class="prompt">$</span>
+                                    <span class="command" data-text="whoami">whoami</span>
                                 </div>
-                                <div class="highlight-text">
-                                    <h3>Analytical Approach</h3>
-                                    <p>Methodical problem-solving with attention to detail</p>
+                                <div class="terminal-output" data-delay="1">penetration_tester</div>
+                                <div class="terminal-line" data-delay="2">
+                                    <span class="prompt">$</span>
+                                    <span class="command" data-text="cat skills.txt">cat skills.txt</span>
                                 </div>
-                            </div>
-                            <div class="highlight-item">
-                                <div class="highlight-icon">
-                                    <i class="fas fa-graduation-cap"></i>
+                                <div class="terminal-output" data-delay="3">OWASP Top 10 | Network Security</div>
+                                <div class="terminal-output" data-delay="4">Black-box Testing | CTF Player</div>
+                                <div class="terminal-line" data-delay="5">
+                                    <span class="prompt">$</span>
+                                    <span class="command" data-text="./exploit.sh">./exploit.sh</span>
                                 </div>
-                                <div class="highlight-text">
-                                    <h3>Continuous Learning</h3>
-                                    <p>Committed to staying updated with the latest security trends</p>
+                                <div class="terminal-output success" data-delay="6">[+] Access Granted!</div>
+                                <div class="terminal-line" data-delay="7">
+                                    <span class="prompt">$</span>
+                                    <span class="typing-cursor">_</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="about-stats" data-aos="fade-left" data-aos-delay="300">
-                        <div class="stats-card">
-                            <div class="stats-header">
-                                <h3>TryHackMe Profile</h3>
-                                <div class="stats-icon">
-                                    <i class="fas fa-trophy"></i>
-                                </div>
-                            </div>
-                            <div class="tryhackme-badge">
-                                <a href="https://tryhackme.com/r/p/muzammil.khan" target="_blank">
-                                    <iframe 
-                                        src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=2561231" 
-                                        style="border:none; width:100%; height:100%;"
-                                        title="TryHackMe Profile Badge">
-                                    </iframe>
-                                </a>
-                            </div>
-                            <div class="stats-metrics">
-                                <div class="metric">
-                                    <div class="metric-value">5+</div>
-                                    <div class="metric-label">Certifications</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">10+</div>
-                                    <div class="metric-label">Projects</div>
-                                </div>
-                                <div class="metric">
-                                    <div class="metric-value">20+</div>
-                                    <div class="metric-label">CTF Challenges</div>
-                                </div>
-                            </div>
+                        
+                        <!-- Floating Elements -->
+                        <div class="floating-element el-1">
+                            <i class="fas fa-shield-halved"></i>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-background">
-                <div class="bg-shape shape-1"></div>
-                <div class="bg-shape shape-2"></div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="section alt-section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <div class="section-number">02</div>
-                    <h2 class="section-title">Experience</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="experience-grid" data-aos="fade-up" data-aos-delay="200">
-                    <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="experience-card-content">
-                            <div class="experience-header-top">
-                                <div class="experience-title-block">
-                                    <h3 class="experience-job-title">Penetration Tester</h3>
-                                    <p class="experience-company-name">
-                                        <i class="fas fa-building"></i> Dawateislami
-                                    </p>
-                                </div>
-                                <div class="experience-status-badge">
-                                    <span class="badge-dot"></span>
-                                    <span>Current</span>
-                                </div>
-                            </div>
-
-                            <div class="experience-date-range">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>September 2025 – Present</span>
-                            </div>
-
-                            <div class="experience-description">
-                                <p>Conducting security assessments and penetration tests on internal and external web applications. Identifying vulnerabilities, documenting findings, and collaborating with development teams on remediation strategies.</p>
-                            </div>
-
-                            <div class="experience-responsibilities">
-                                <h4>Key Responsibilities</h4>
-                                <ul>
-                                    <li>
-                                        <span class="resp-icon"><i class="fas fa-shield-alt"></i></span>
-                                        <span>Security assessments and vulnerability scans</span>
-                                    </li>
-                                    <li>
-                                        <span class="resp-icon"><i class="fas fa-microscope"></i></span>
-                                        <span>Detailed penetration testing on systems</span>
-                                    </li>
-                                    <li>
-                                        <span class="resp-icon"><i class="fas fa-chart-pie"></i></span>
-                                        <span>Analyze and prioritize vulnerabilities</span>
-                                    </li>
-                                    <li>
-                                        <span class="resp-icon"><i class="fas fa-file-alt"></i></span>
-                                        <span>Draft comprehensive security reports</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="experience-tech-stack">
-                                <span class="tech-badge">Burp Suite</span>
-                                <span class="tech-badge">Nmap</span>
-                                <span class="tech-badge">Metasploit</span>
-                                <span class="tech-badge">OWASP</span>
-                                <span class="tech-badge">Security Testing</span>
-                            </div>
+                        <div class="floating-element el-2">
+                            <i class="fas fa-bug"></i>
                         </div>
-
-                        <div class="experience-card-overlay">
-                            <div class="overlay-content">
-                                <h4>Impact Highlights</h4>
-                                <ul>
-                                    <li>Identified critical and high-risk vulnerabilities</li>
-                                    <li>Created detailed OWASP-based reports</li>
-                                    <li>Worked with senior security testers</li>
-                                    <li>Tracked remediation progress</li>
-                                </ul>
-                            </div>
+                        <div class="floating-element el-3">
+                            <i class="fas fa-terminal"></i>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-background">
-                <div class="bg-shape shape-3"></div>
-                <div class="bg-shape shape-4"></div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <div class="section-number">03</div>
-                    <h2 class="section-title">Projects</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-content">
-                            <div class="project-header">
-                                <div class="project-icon">
-                                    <i class="fas fa-lock"></i>
-                                </div>
-                                <h3>Web Application Penetration Testing</h3>
-                            </div>
-                            <p>
-                                Performed authorized black-box penetration testing on live production applications under the supervision of Syed Farhan Ahmed. Identified critical vulnerabilities including environment file exposure, SMTP credential abuse, JWT token leakage, and insecure database services. Delivered comprehensive OWASP-based security reports with CVSS scoring and actionable remediation guidelines.
-                            </p>
-                            <div class="project-details">
-                                <div class="project-tools">
-                                    <span>Burp Suite</span>
-                                    <span>Nmap</span>
-                                    <span>Gobuster</span>
-                                    <span>Swaks</span>
-                                    <span>JWT.io</span>
-                                </div>
-                                <div class="project-links">
-                                    <a href="#" class="project-link" aria-label="View Project">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-hover">
-                                <div class="project-hover-content">
-                                    <h4>Key Achievements</h4>
-                                    <ul>
-                                        <li>Identified 5 critical and medium vulnerabilities</li>
-                                        <li>Environment file exposure detection</li>
-                                        <li>SMTP credential abuse identification</li>
-                                        <li>JWT token leakage discovery</li>
-                                        <li>Insecure database services findings</li>
-                                        <li>OWASP-based reports with CVSS scoring</li>
-                                        <li>Proof-of-Concepts and remediation guidelines</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section-background">
-                <div class="bg-shape shape-9"></div>
-                <div class="bg-shape shape-10"></div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section">
-  <div class="container">
-      <div class="section-header" data-aos="fade-up">
-          <div class="section-number">05</div>
-          <h2 class="section-title">Education</h2>
-          <div class="section-line"></div>
-      </div>
-      <div class="education-content" data-aos="fade-up" data-aos-delay="200">
-          <div class="education-list active" id="academic-list">
-              <div class="education-item" data-aos="fade-up" data-aos-delay="100">
-                  <div class="education-item-header">
-                      <div class="education-degree">M.A</div>
-                      <div class="education-year"></div>
-                  </div>
-                  <div class="education-item-content">
-                      <h3>Kanz ul Madaris Board</h3>
-                      <p>Karachi, Pakistan</p>
-                      <div class="education-badge">Religious Studies</div>
-                  </div>
-              </div>
-              
-              <div class="education-item" data-aos="fade-up" data-aos-delay="200">
-                  <div class="education-item-header">
-                      <div class="education-degree">B.A</div>
-                      <div class="education-year"></div>
-                  </div>
-                  <div class="education-item-content">
-                      <h3>Tanzeem ul Madaris Ahl e Sunnat Board</h3>
-                      <p>Karachi, Pakistan</p>
-                      <div class="education-badge">Religious Studies</div>
-                  </div>
-              </div>
-              
-              <div class="education-item" data-aos="fade-up" data-aos-delay="300">
-                  <div class="education-item-header">
-                      <div class="education-degree">F.A</div>
-                      <div class="education-year"></div>
-                  </div>
-                  <div class="education-item-content">
-                      <h3>Tanzeem ul Madaris Ahl e Sunnat Board</h3>
-                      <p>Karachi, Pakistan</p>
-                      <div class="education-badge">Religious Studies</div>
-                  </div>
-              </div>
-              
-              <div class="education-item" data-aos="fade-up" data-aos-delay="400">
-                  <div class="education-item-header">
-                      <div class="education-degree">Matric</div>
-                      <div class="education-year"></div>
-                  </div>
-                  <div class="education-item-content">
-                      <h3>Tanzeem ul Madaris Ahl e Sunnat Board</h3>
-                      <p>Karachi, Pakistan</p>
-                      <div class="education-badge">Religious Studies</div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="section-background">
-      <div class="bg-shape shape-3"></div>
-      <div class="bg-shape shape-4"></div>
-  </div>
-</section>
-
-        <!-- Certificates Section -->
-        <section id="certificates" class="section">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <div class="section-number">06</div>
-            <h2 class="section-title">Certificates</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="certificates-grid" data-aos="fade-up" data-aos-delay="200">
-            <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="certificate-image">
-                    <img src="https://eccommonstorage.blob.core.windows.net/codered/certificates/e7c14e13-7fc7-432f-a2cd-086c78efd159.png" alt="SQL Injection Attacks Certificate">
-                    <div class="certificate-overlay">
-                        <a href="https://learn.eccouncil.org/certificate/e7c14e13-7fc7-432f-a2cd-086c78efd159" target="_blank" class="view-certificate">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>SQL Injection Attacks</h3>
-                    <p>EC-Council</p>
-                    <div class="certificate-meta">
-                        <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="certificate-image">
-                    <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-6I7MZAHWKL.png" alt="Jr Penetration Tester Certificate">
-                    <div class="certificate-overlay">
-                        <a href="https://tryhackme.com/r/certificate/THM-6I7MZAHWKL" target="_blank" class="view-certificate">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>Jr Penetration Tester</h3>
-                    <p>TryHackMe</p>
-                    <div class="certificate-meta">
-                        <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="certificate-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="certificate-image">
-                    <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-V9W18SXJBK.png" alt="CompTIA Pentest+ Certificate">
-                    <div class="certificate-overlay">
-                        <a href="https://tryhackme.com/r/certificate/THM-V9W18SXJBK" target="_blank" class="view-certificate">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>CompTIA Pentest+</h3>
-                    <p>TryHackMe</p>
-                    <div class="certificate-meta">
-                        <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="certificate-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="certificate-image">
-                    <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-WEFUWUAMHL.png" alt="Pre Security Certificate">
-                    <div class="certificate-overlay">
-                        <a href="https://tryhackme.com/r/certificate/THM-WEFUWUAMHL" target="_blank" class="view-certificate">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>Pre Security</h3>
-                    <p>TryHackMe</p>
-                    <div class="certificate-meta">
-                        <span><i class="fas fa-calendar-alt"></i> 2022</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="certificate-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="certificate-image">
-                    <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-JPJFYXRSLY.png" alt="Web Fundamentals Certificate">
-                    <div class="certificate-overlay">
-                        <a href="https://tryhackme.com/r/certificate/THM-JPJFYXRSLY" target="_blank" class="view-certificate">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>Web Fundamentals</h3>
-                    <p>TryHackMe</p>
-                    <div class="certificate-meta">
-                        <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="certificate-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="certificate-image">
-                    <img src="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-8NGC8M2SJZ.png" alt="Introduction to Cyber Security Certificate">
-                    <div class="certificate-overlay">
-                        <a href="https://tryhackme.com/r/certificate/THM-8NGC8M2SJZ" target="_blank" class="view-certificate">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>Introduction to Cyber Security</h3>
-                    <p>TryHackMe</p>
-                    <div class="certificate-meta">
-                        <span><i class="fas fa-calendar-alt"></i> 2023</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="certificate-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="certificate-image">
-                    <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-ad683839-819a-443d-a8d2-adaa9341aab8.jpg" alt="Web Application Penetration Testing Using Kali Linux Certificate">
-                    <div class="certificate-overlay">
-                        <a href="https://www.udemy.com/certificate/UC-ad683839-819a-443d-a8d2-adaa9341aab8/?" target="_blank" class="view-certificate">
-                            <i class="fas fa-external-link-alt"></i>
-                            View Certificate
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>Web Penetration Testing</h3>
-                    <p>Udemy</p>
-                    <div class="certificate-meta">
-                        <span><i class="fas fa-calendar-alt"></i> 2022</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="section-background">
-        <div class="bg-shape shape-5"></div>
-        <div class="bg-shape shape-6"></div>
-    </div>
-</section>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="scroll-text">
+                <span>S</span><span>C</span><span>R</span><span>O</span><span>L</span><span>L</span>
+            </div>
+        </div>
+    </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <div class="section-number">07</div>
-                    <h2 class="section-title">Skills</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="skills-content">
-                    <div class="skills-overview" data-aos="fade-right" data-aos-delay="200">
-                        <h3 class="skills-subtitle">Technical Expertise</h3>
-                        <p>My cybersecurity toolkit includes a range of specialized skills and tools that enable me to identify vulnerabilities and secure systems against potential threats.</p>
-                    </div>
-                    <div class="skills-grid">
-                        <div class="skill-category" data-aos="zoom-in" data-aos-delay="100">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <h3>Penetration Testing</h3>
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-bg-text">ABOUT</div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01.</span>
+                <h2 class="section-title split-text">
+                    <span class="word">Who</span>
+                    <span class="word outline-text">Am I?</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5">
+                    <div class="about-image-wrapper reveal-left">
+                        <div class="about-image">
+                            <div class="image-container">
+                                <!-- Replace with your actual image -->
+                                <img src="./myimage.jpg" alt="Muhammad Muzammil Khan" class="profile-img">
+                                
+                                <!-- Fallback Placeholder if no image -->
+                                <!-- <div class="image-placeholder">
+                                    <i class="fas fa-user-secret"></i>
+                                    <div class="scan-line"></div>
+                                </div> -->
                             </div>
-                            <div class="skill-progress-container">
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Vulnerability Assessment</span>
-                                        <span class="percent">90%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-percent="90"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Network Scanning</span>
-                                        <span class="percent">85%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-percent="85"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Web App Security</span>
-                                        <span class="percent">80%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-percent="80"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Exploit Development</span>
-                                        <span class="percent">75%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-percent="75"></div>
-                                    </div>
-                                </div>
+                            <div class="image-border"></div>
+                            <div class="image-corner corner-tl"></div>
+                            <div class="image-corner corner-tr"></div>
+                            <div class="image-corner corner-bl"></div>
+                            <div class="image-corner corner-br"></div>
+                            <div class="image-glitch-overlay"></div>
+                        </div>
+                        
+                        <div class="floating-card card-1">
+                            <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
+                            <div class="card-text">
+                                <span class="card-number">5+</span>
+                                <span class="card-label">Vulns Found</span>
                             </div>
                         </div>
-                        <div class="skill-category" data-aos="zoom-in" data-aos-delay="200">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <h3>Security Tools</h3>
-                            </div>
-                            <div class="tools-grid">
-                                <div class="tool-item" data-tooltip="Network Scanner">
-                                    <div class="tool-icon"><i class="fas fa-network-wired"></i></div>
-                                    <span>Nmap</span>
-                                </div>
-                                <div class="tool-item" data-tooltip="Network Protocol Analyzer">
-                                    <div class="tool-icon"><i class="fas fa-wifi"></i></div>
-                                    <span>Wireshark</span>
-                                </div>
-                                <div class="tool-item" data-tooltip="Web Vulnerability Scanner">
-                                    <div class="tool-icon"><i class="fas fa-bug"></i></div>
-                                    <span>Burp Suite</span>
-                                </div>
-                                <div class="tool-item" data-tooltip="Penetration Testing Framework">
-                                    <div class="tool-icon"><i class="fas fa-terminal"></i></div>
-                                    <span>Metasploit</span>
-                                </div>
-                                <div class="tool-item" data-tooltip="Password Cracking">
-                                    <div class="tool-icon"><i class="fas fa-key"></i></div>
-                                    <span>Hydra</span>
-                                </div>
-                                <div class="tool-item" data-tooltip="Directory Discovery">
-                                    <div class="tool-icon"><i class="fas fa-folder-open"></i></div>
-                                    <span>FFUF</span>
-                                </div>
-                                <div class="tool-item" data-tooltip="SQL Injection">
-                                    <div class="tool-icon"><i class="fas fa-database"></i></div>
-                                    <span>SQLMap</span>
-                                </div>
-                                <div class="tool-item" data-tooltip="Hash Cracking">
-                                    <div class="tool-icon"><i class="fas fa-unlock"></i></div>
-                                    <span>Hashcat</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-category" data-aos="zoom-in" data-aos-delay="300">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fas fa-code"></i>
-                                </div>
-                                <h3>Programming</h3>
-                            </div>
-                            <div class="skill-progress-container">
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Python</span>
-                                        <span class="percent">80%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-percent="80"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>JavaScript</span>
-                                        <span class="percent">75%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-percent="75"></div>
-                                    </div>
-                                </div>
-                                <div class="skill-item">
-                                    <div class="skill-info">
-                                        <span>Bash Scripting</span>
-                                        <span class="percent">85%</span>
-                                    </div>
-                                    <div class="skill-bar">
-                                        <div class="skill-progress" data-percent="85"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="skill-category" data-aos="zoom-in" data-aos-delay="400">
-                            <div class="skill-header">
-                                <div class="skill-icon">
-                                    <i class="fas fa-laptop-code"></i>
-                                </div>
-                                <h3>Operating Systems</h3>
-                            </div>
-                            <div class="os-grid">
-                                <div class="os-item">
-                                    <div class="os-icon"><i class="fab fa-windows"></i></div>
-                                    <div class="os-info">
-                                        <h4>Windows</h4>
-                                        <div class="os-bar">
-                                            <div class="os-progress" style="width: 85%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="os-item">
-                                    <div class="os-icon"><i class="fab fa-linux"></i></div>
-                                    <div class="os-info">
-                                        <h4>Linux (Kali)</h4>
-                                        <div class="os-bar">
-                                            <div class="os-progress" style="width: 90%"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="os-item">
-                                    <div class="os-icon"><i class="fab fa-ubuntu"></i></div>
-                                    <div class="os-info">
-                                        <h4>Ubuntu</h4>
-                                        <div class="os-bar">
-                                            <div class="os-progress" style="width: 80%"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                        
+                        <div class="floating-card card-2">
+                            <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                            <div class="card-text">
+                                <span class="card-number">7</span>
+                                <span class="card-label">Certifications</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="section-background">
-                <div class="bg-shape shape-7"></div>
-                <div class="bg-shape shape-8"></div>
-            </div>
-        </section>
-
-
-
-        <!-- Contact Section -->
-        <section id="contact" class="section alt-section">
-            <div class="container">
-                <div class="section-header" data-aos="fade-up">
-                    <div class="section-number">08</div>
-                    <h2 class="section-title">Contact</h2>
-                    <div class="section-line"></div>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
-                        <div class="contact-card">
-                            <h3>Get In Touch</h3>
+                
+                <div class="col-lg-7">
+                    <div class="about-content reveal-right">
+                        <h3 class="about-subtitle">
+                            Penetration Tester & 
+                            <span class="text-gradient">Security Researcher</span>
+                        </h3>
+                        
+                        <div class="about-text">
                             <p>
-                                I'm currently looking for new opportunities in the cybersecurity field. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                                Aspiring penetration tester with a solid foundation in cybersecurity, skilled in
+                                vulnerability assessments, network scanning, and ethical hacking. My unique blend of
+                                religious education and technical expertise allows me to approach cybersecurity challenges
+                                with a holistic perspective.
                             </p>
-                            <div class="contact-details">
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div class="contact-text">
-                                        <h4>Email</h4>
-                                        <a href="mailto:muzammil.khan92@hotmail.com">muzammil.khan92@hotmail.com</a>
-                                    </div>
-                                </div>
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-phone"></i>
-                                    </div>
-                                    <div class="contact-text">
-                                        <h4>Phone</h4>
-                                        <a href="tel:+923192025919">+92-319-2025919</a>
-                                    </div>
-                                </div>
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="contact-text">
-                                        <h4>Location</h4>
-                                        <span>Karachi, Pakistan</span>
-                                    </div>
-                                </div>
+                            <p>
+                                I'm passionate about identifying security vulnerabilities and helping organizations strengthen their defenses against cyber threats. My experience includes network scanning, web application security testing, and exploit development.
+                            </p>
+                        </div>
+                        
+                        <div class="about-info">
+                            <div class="info-item">
+                                <span class="info-icon"><i class="fas fa-user"></i></span>
+                                <span class="info-label">Name</span>
+                                <span class="info-value">Muhammad Muzammil Khan</span>
                             </div>
-                            <div class="contact-social">
-                                <h4>Connect With Me</h4>
-                                <div class="social-links">
-                                    <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92" target="_blank" aria-label="LinkedIn">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="https://github.com/muzammilkhan26" target="_blank" aria-label="GitHub">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank" aria-label="Facebook">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </div>
+                            <div class="info-item">
+                                <span class="info-icon"><i class="fas fa-envelope"></i></span>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">muzammil.khan92@hotmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon"><i class="fas fa-phone"></i></span>
+                                <span class="info-label">Phone</span>
+                                <span class="info-value">+92-319-2025919</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon"><i class="fas fa-location-dot"></i></span>
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Karachi, Pakistan</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-icon"><i class="fas fa-language"></i></span>
+                                <span class="info-label">Languages</span>
+                                <span class="info-value">Urdu, English, Arabic</span>
+                            </div>
+                        </div>
+                        
+                        <div class="about-stats">
+                            <div class="stat-box">
+                                <span class="stat-number counter" data-target="5">0</span>
+                                <span class="stat-label">Critical Vulns</span>
+                                <div class="stat-bar"></div>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number counter" data-target="10">0</span>
+                                <span class="stat-label">Projects</span>
+                                <div class="stat-bar"></div>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number counter" data-target="20">0</span>
+                                <span class="stat-label">CTF Challenges</span>
+                                <div class="stat-bar"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="contact-form-container" data-aos="fade-left" data-aos-delay="300">
-                        <form class="contact-form" id="contact-form">
-                            <div class="form-header">
-                                <h3>Send Me a Message</h3>
-                                <p>I'd love to hear from you!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-bg-text">WORK</div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02.</span>
+                <h2 class="section-title split-text">
+                    <span class="word">Work</span>
+                    <span class="word outline-text">Experience</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-line">
+                    <div class="timeline-progress"></div>
+                </div>
+                
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-marker">
+                        <div class="marker-dot">
+                            <div class="marker-pulse"></div>
+                        </div>
+                    </div>
+                    <div class="timeline-content" data-tilt>
+                        <div class="timeline-header">
+                            <span class="timeline-date">
+                                <i class="far fa-calendar-alt"></i>
+                                September 2025 – Present
+                            </span>
+                            <span class="timeline-badge">Current</span>
+                        </div>
+                        <h4 class="timeline-title">Penetration Tester</h4>
+                        <h5 class="timeline-company">
+                            <i class="fas fa-building"></i>
+                            Dawateislami
+                        </h5>
+                        <ul class="timeline-list">
+                            <li>
+                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
+                                Performing routine security assessments and vulnerability scans on internal web applications.
+                            </li>
+                            <li>
+                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
+                                Assisting senior testers in conducting detailed penetration tests against new and existing systems.
+                            </li>
+                            <li>
+                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
+                                Analyzing scan results, identifying false positives, and prioritizing real vulnerabilities.
+                            </li>
+                            <li>
+                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
+                                Drafting sections of security reports and collaborating with development teams to track remediation progress.
+                            </li>
+                        </ul>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-bg-text">PROJECTS</div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03.</span>
+                <h2 class="section-title split-text">
+                    <span class="word">Featured</span>
+                    <span class="word outline-text">Projects</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Main Project -->
+                <div class="col-lg-12">
+                    <div class="project-card featured reveal-left" data-tilt>
+                        <div class="project-number">01</div>
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <i class="fas fa-globe"></i>
                             </div>
-                            <div class="form-group">
-                                <div class="form-field">
-                                    <input type="text" id="name" name="name" required>
-                                    <label for="name">Name</label>
-                                    <div class="form-field-bar"></div>
+                            <span class="project-badge">Confidential</span>
+                        </div>
+                        <h4 class="project-title">Web Application Penetration Testing</h4>
+                        <p class="project-client">Confidential University | Scope: 2 Public-Facing Applications</p>
+                        <p class="project-description">
+                            Performed authorized black-box penetration testing on live production applications 
+                            under the supervision of Syed Farhan Ahmed (Cybersecurity Engineer).
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Identified 5 critical and medium vulnerabilities including environment file exposure, SMTP credential abuse, JWT token leakage, and insecure database services.</li>
+                            <li>Delivered a detailed OWASP-based report with CVSS scoring, Proof-of-Concepts (PoCs), and actionable remediation guidelines.</li>
+                        </ul>
+                        <div class="project-tags">
+                            <span>Burp Suite</span>
+                            <span>Nmap</span>
+                            <span>Gobuster</span>
+                            <span>Swaks</span>
+                            <span>jwt.io</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-date">
+                                <i class="far fa-calendar"></i>
+                                July 2025
+                            </span>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-bg-text">EDU</div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04.</span>
+                <h2 class="section-title split-text">
+                    <span class="word">Education</span>
+                    <span class="word outline-text">Background</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="education-grid">
+                <div class="edu-card reveal-up" data-delay="0">
+                    <div class="edu-marker">
+                        <span class="marker-line"></span>
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="edu-content">
+                        <h5>M.A</h5>
+                        <p>Kanz ul Madaris Board</p>
+                        <span class="edu-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Karachi, Pakistan
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="edu-card reveal-up" data-delay="100">
+                    <div class="edu-marker">
+                        <span class="marker-line"></span>
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="edu-content">
+                        <h5>B.A</h5>
+                        <p>Tanzeem ul Madaris Ahl e Sunnat Board</p>
+                        <span class="edu-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Karachi, Pakistan
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="edu-card reveal-up" data-delay="200">
+                    <div class="edu-marker">
+                        <span class="marker-line"></span>
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="edu-content">
+                        <h5>F.A</h5>
+                        <p>Tanzeem ul Madaris Ahl e Sunnat Board</p>
+                        <span class="edu-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Karachi, Pakistan
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="edu-card reveal-up" data-delay="300">
+                    <div class="edu-marker">
+                        <span class="marker-line"></span>
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="edu-content">
+                        <h5>Matric</h5>
+                        <p>Tanzeem ul Madaris Ahl e Sunnat Board</p>
+                        <span class="edu-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Karachi, Pakistan
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="section-bg-text">CERTS</div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05.</span>
+                <h2 class="section-title split-text">
+                    <span class="word">Certifications</span>
+                    <span class="word outline-text">& Training</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="cert-grid">
+                <div class="cert-card reveal-up" data-tilt data-delay="0">
+                    <div class="cert-icon">
+                        <i class="fas fa-database"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h5 class="cert-title">SQL Injection Attacks</h5>
+                    <p class="cert-issuer">EC-Council</p>
+                    <a href="https://learn.eccouncil.org/certificate/e7c14e13-7fc7-432f-a2cd-086c78efd159" target="_blank" class="cert-link">View Certificate</a>
+                    <div class="cert-line"></div>
+                </div>
+                
+                <div class="cert-card reveal-up" data-tilt data-delay="100">
+                    <div class="cert-icon">
+                        <i class="fas fa-user-ninja"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h5 class="cert-title">Jr Penetration Tester</h5>
+                    <p class="cert-issuer">TryHackMe</p>
+                    <a href="https://tryhackme.com/r/certificate/THM-6I7MZAHWKL" target="_blank" class="cert-link">View Certificate</a>
+                    <div class="cert-line"></div>
+                </div>
+                
+                <div class="cert-card reveal-up" data-tilt data-delay="200">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h5 class="cert-title">CompTIA Pentest+</h5>
+                    <p class="cert-issuer">TryHackMe</p>
+                    <a href="https://tryhackme.com/r/certificate/THM-V9W18SXJBK" target="_blank" class="cert-link">View Certificate</a>
+                    <div class="cert-line"></div>
+                </div>
+                
+                <div class="cert-card reveal-up" data-tilt data-delay="300">
+                    <div class="cert-icon">
+                        <i class="fas fa-lock"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h5 class="cert-title">Pre Security</h5>
+                    <p class="cert-issuer">TryHackMe</p>
+                    <a href="https://tryhackme.com/r/certificate/THM-WEFUWUAMHL" target="_blank" class="cert-link">View Certificate</a>
+                    <div class="cert-line"></div>
+                </div>
+                
+                <div class="cert-card reveal-up" data-tilt data-delay="400">
+                    <div class="cert-icon">
+                        <i class="fas fa-globe"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h5 class="cert-title">Web Fundamentals</h5>
+                    <p class="cert-issuer">TryHackMe</p>
+                    <a href="https://tryhackme.com/r/certificate/THM-JPJFYXRSLY" target="_blank" class="cert-link">View Certificate</a>
+                    <div class="cert-line"></div>
+                </div>
+
+                <div class="cert-card reveal-up" data-tilt data-delay="500">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h5 class="cert-title">Introduction to Cyber Security</h5>
+                    <p class="cert-issuer">TryHackMe</p>
+                    <a href="https://tryhackme.com/r/certificate/THM-8NGC8M2SJZ" target="_blank" class="cert-link">View Certificate</a>
+                    <div class="cert-line"></div>
+                </div>
+
+                <div class="cert-card reveal-up" data-tilt data-delay="600">
+                    <div class="cert-icon">
+                        <i class="fas fa-terminal"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h5 class="cert-title">Web Penetration Testing</h5>
+                    <p class="cert-issuer">Udemy</p>
+                    <a href="https://www.udemy.com/certificate/UC-ad683839-819a-443d-a8d2-adaa9341aab8/?" target="_blank" class="cert-link">View Certificate</a>
+                    <div class="cert-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-bg-text">SKILLS</div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06.</span>
+                <h2 class="section-title split-text">
+                    <span class="word">My</span>
+                    <span class="word outline-text">Arsenal</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="skill-card reveal-up" data-tilt>
+                        <div class="skill-card-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <h4>Penetration Testing</h4>
+                        </div>
+                        <p class="skill-description">Experienced in identifying and exploiting vulnerabilities in web applications and networks.</p>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Vulnerability Assessment</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90">
+                                        <span class="progress-glow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Network Scanning</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85">
+                                        <span class="progress-glow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Web App Security</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80">
+                                        <span class="progress-glow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Exploit Development</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75">
+                                        <span class="progress-glow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="skill-card reveal-up" data-tilt data-delay="200">
+                        <div class="skill-card-header">
+                            <div class="skill-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Programming</h4>
+                        </div>
+                        <p class="skill-description">Proficient in scripting languages for automation and exploit development.</p>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Python</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80">
+                                        <span class="progress-glow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>JavaScript</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75">
+                                        <span class="progress-glow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span>Bash Scripting</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85">
+                                        <span class="progress-glow"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-glow"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Marquee -->
+            <div class="tools-marquee">
+                <div class="marquee-track">
+                    <div class="marquee-content">
+                        <span class="tool-tag"><i class="fas fa-search"></i> Nmap</span>
+                        <span class="tool-tag"><i class="fas fa-network-wired"></i> Wireshark</span>
+                        <span class="tool-tag"><i class="fas fa-bug"></i> Burp Suite</span>
+                        <span class="tool-tag"><i class="fas fa-skull"></i> Metasploit</span>
+                        <span class="tool-tag"><i class="fas fa-key"></i> Hydra</span>
+                        <span class="tool-tag"><i class="fas fa-bolt"></i> FFUF</span>
+                        <span class="tool-tag"><i class="fas fa-lock"></i> Hashcat</span>
+                        <span class="tool-tag"><i class="fas fa-unlock"></i> John the Ripper</span>
+                        <span class="tool-tag"><i class="fas fa-database"></i> SQLMap</span>
+                        <span class="tool-tag"><i class="fas fa-folder-open"></i> Gobuster</span>
+                    </div>
+                    <div class="marquee-content">
+                        <span class="tool-tag"><i class="fas fa-search"></i> Nmap</span>
+                        <span class="tool-tag"><i class="fas fa-network-wired"></i> Wireshark</span>
+                        <span class="tool-tag"><i class="fas fa-bug"></i> Burp Suite</span>
+                        <span class="tool-tag"><i class="fas fa-skull"></i> Metasploit</span>
+                        <span class="tool-tag"><i class="fas fa-key"></i> Hydra</span>
+                        <span class="tool-tag"><i class="fas fa-bolt"></i> FFUF</span>
+                        <span class="tool-tag"><i class="fas fa-lock"></i> Hashcat</span>
+                        <span class="tool-tag"><i class="fas fa-unlock"></i> John the Ripper</span>
+                        <span class="tool-tag"><i class="fas fa-database"></i> SQLMap</span>
+                        <span class="tool-tag"><i class="fas fa-folder-open"></i> Gobuster</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operating Systems -->
+            <div class="os-section">
+                <h4 class="subsection-title">
+                    <span class="line"></span>
+                    <span>Operating Systems</span>
+                    <span class="line"></span>
+                </h4>
+                <div class="os-grid">
+                    <div class="os-item reveal-up" data-delay="0">
+                        <div class="os-icon"><i class="fab fa-windows"></i></div>
+                        <span>Windows</span>
+                    </div>
+                    <div class="os-item reveal-up" data-delay="100">
+                        <div class="os-icon"><i class="fab fa-linux"></i></div>
+                        <span>Kali Linux</span>
+                    </div>
+                    <div class="os-item reveal-up" data-delay="200">
+                        <div class="os-icon"><i class="fab fa-ubuntu"></i></div>
+                        <span>Ubuntu</span>
+                    </div>
+                    <div class="os-item reveal-up" data-delay="300">
+                        <div class="os-icon"><i class="fab fa-linux"></i></div>
+                        <span>Linux Mint</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-bg-text">CONTACT</div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">07.</span>
+                <h2 class="section-title split-text">
+                    <span class="word">Get In</span>
+                    <span class="word outline-text">Touch</span>
+                </h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <div class="contact-info reveal-left">
+                        <h3 class="contact-heading">Let's Work Together</h3>
+                        <p class="contact-text">
+                            I'm currently looking for new opportunities in the cybersecurity field. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                        </p>
+                        
+                        <div class="contact-cards">
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Email</span>
+                                    <a href="mailto:muzammil.khan92@hotmail.com">muzammil.khan92@hotmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Phone</span>
+                                    <a href="tel:+923192025919">+92-319-2025919</a>
+                                </div>
+                            </div>
+                            <div class="contact-card">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">Location</span>
+                                    <span>Karachi, Pakistan</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-social">
+                            <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" target="_blank" class="magnetic-btn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/muzammilkhan26" target="_blank" class="magnetic-btn">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank" class="magnetic-btn">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="contact-form-wrapper reveal-right">
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">
+                                        <span class="label-text">Your Name</span>
+                                    </label>
+                                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                                    <span class="input-focus"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">
+                                        <span class="label-text">Your Email</span>
+                                    </label>
+                                    <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                                    <span class="input-focus"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="form-field">
-                                    <input type="email" id="email" name="email" required>
-                                    <label for="email">Email</label>
-                                    <div class="form-field-bar"></div>
-                                </div>
+                                <label for="subject">
+                                    <span class="label-text">Subject</span>
+                                </label>
+                                <input type="text" id="subject" class="form-control" placeholder="Project Discussion" required>
+                                <span class="input-focus"></span>
                             </div>
                             <div class="form-group">
-                                <div class="form-field">
-                                    <textarea id="message" name="message" rows="5" required></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="form-field-bar"></div>
-                                </div>
+                                <label for="message">
+                                    <span class="label-text">Message</span>
+                                </label>
+                                <textarea id="message" class="form-control" rows="5" placeholder="Your message here..." required></textarea>
+                                <span class="input-focus"></span>
                             </div>
-                            <button type="submit" class="btn primary-btn">
+                            <button type="submit" class="btn-submit magnetic-btn">
                                 <span class="btn-text">Send Message</span>
                                 <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                                <span class="btn-background"></span>
+                                <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="section-background">
-                <div class="bg-shape shape-11"></div>
-                <div class="bg-shape shape-12"></div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-    <span class="footer-logo-text">MMK</span>
-</div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/muzammilkhan26" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="brand-bracket">{</span>MMK<span class="brand-bracket">}</span>
+                    </a>
+                    <p>Penetration Tester | Security Researcher</p>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/muzammilkhan26" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Muhammad Muzammil Khan. All Rights Reserved.</p>
+                <p class="made-with">Made with <i class="fas fa-heart pulse"></i> in Karachi</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; <span id="currentYear"></span> Muhammad Muzammil Khan. All rights reserved.</p>
-            <script>
-              document.getElementById("currentYear").textContent = new Date().getFullYear();
-            </script>
-            <div class="theme-credit">
-                <span>Cybersecurity Specialist</span>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+    <!-- Back to Top -->
+    <button id="backToTop" class="magnetic-btn" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
+        <svg class="progress-ring" width="50" height="50">
+            <circle class="progress-ring-circle" stroke="white" stroke-width="2" fill="transparent" r="22" cx="25" cy="25"/>
+        </svg>
     </button>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
