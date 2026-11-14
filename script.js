@@ -410,7 +410,7 @@
       'penetration testing',
       'web app security testing',
       'Android app security testing',
-      'CVSS-scored reporting',
+      'security report writing',
       'fix re-testing'
     ];
     var p = 0;

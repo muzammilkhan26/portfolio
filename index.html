@@ -124,8 +124,8 @@
               <p class="t-out">web apps | android apps | reporting</p>
               <p class="t-cmd">ls findings/</p>
               <p class="t-out">xss  sqli  idor  exposed_credentials</p>
-              <p class="t-cmd">./report --last</p>
-              <p class="t-ok">[+] 5 findings reported, fixes re-tested</p>
+              <p class="t-cmd">./stats --since 2025-09</p>
+              <p class="t-ok">[+] 80+ apps tested | 110+ assessments</p>
               <p class="t-cmd t-idle"></p>
             </div>
           </div>
@@ -174,13 +174,13 @@
 
         <div class="about-text">
           <p class="big">I work as a penetration tester at Dawateislami, where I assess web and mobile applications from scoping to re-test.</p>
-          <p>Most of my findings are the ordinary, damaging kind: cross-site scripting, SQL injection, broken access control (IDOR) and credentials left where they should not be. On Android I use Frida, JADX and ADB to read what an app really does at runtime and how it stores data.</p>
-          <p>A finding is only useful if someone can act on it, so every report I write has an executive summary, a CVSS score, a proof of concept and a fix the developers can apply. I then re-test with them until it is closed.</p>
+          <p>I look for the weaknesses that do real damage: cross-site scripting, SQL injection, broken access control (IDOR), exposed credentials and outdated components. On Android I use Frida, JADX and ADB to read what an app really does at runtime and how it stores data.</p>
+          <p>A finding is only useful if someone can act on it, so each one I report comes with its severity, the evidence, the impact and a fix the developers can apply. I then re-test with them until it is closed.</p>
 
           <dl class="facts">
             <div class="card"><dt><svg class="ico"><use href="#i-pin"/></svg>Based in</dt><dd>Karachi, Pakistan</dd></div>
             <div class="card"><dt><svg class="ico"><use href="#i-target"/></svg>Focus</dt><dd>Web and Android application security</dd></div>
-            <div class="card"><dt><svg class="ico"><use href="#i-book"/></svg>Learning now</dt><dd>Active Directory attacks, C for reverse engineering</dd></div>
+            <div class="card"><dt><svg class="ico"><use href="#i-book"/></svg>Learning now</dt><dd>AI and LLM security, C for reverse engineering</dd></div>
             <div class="card"><dt><svg class="ico"><use href="#i-chat"/></svg>Languages</dt><dd>Urdu, English, Arabic</dd></div>
           </dl>
         </div>
@@ -212,7 +212,7 @@
             <li>Run web application assessments end to end, agreeing scope and final report with the security manager.</li>
             <li>Find and exploit XSS, SQL injection, IDOR and exposed credentials in production systems.</li>
             <li>Test Android apps with Frida, JADX and ADB: runtime behaviour, APK reverse engineering and insecure data handling.</li>
-            <li>Write the full report: executive summary, CVSS-scored findings, proofs of concept and remediation steps.</li>
+            <li>Report every finding with its severity, evidence, impact and remediation steps.</li>
             <li>Work with developers to confirm each fix and track remediation through re-testing.</li>
           </ul>
         </article>
@@ -300,7 +300,7 @@
           <a class="card tile" href="https://github.com/muzammilkhan26/thm-writeups/blob/main/SQL-Injection.md" target="_blank" rel="noopener noreferrer">
             <span class="tile-tag">Injection</span>
             <h3>SQL injection</h3>
-            <p>From one injectable parameter to a full dump of the database.</p>
+            <p>Error-based, UNION and blind injection, ending in a full dump of the database.</p>
             <span class="tile-go">Read writeup<svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
@@ -316,7 +316,7 @@
           <a class="card tile" href="https://github.com/muzammilkhan26/thm-writeups/blob/main/Authentication-Bypass.md" target="_blank" rel="noopener noreferrer">
             <span class="tile-tag">Broken access control</span>
             <h3>Authentication bypass</h3>
-            <p>Getting past a login check without valid credentials.</p>
+            <p>Reaching the admin panel through forced browsing and a tampered role parameter.</p>
             <span class="tile-go">Read writeup<svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
@@ -350,7 +350,7 @@
         <ul class="mini-stats">
           <li><b>Top 3%</b>global rank</li>
           <li><b>128</b>rooms completed</li>
-          <li><b>73</b>day streak</li>
+          <li><b>73</b>days, longest streak</li>
         </ul>
         <span class="tile-go">View profile<svg class="ico"><use href="#i-arrow"/></svg></span>
       </a>
@@ -365,7 +365,17 @@
         <h2 aria-label="Certificates and training"><span data-scramble>Certificates</span> <span class="outline" data-scramble>&amp; training</span></h2>
       </header>
 
-      <ul class="grid grid-2 cert-top">
+      <ul class="grid grid-3 cert-top">
+        <li>
+          <a class="card cert cert-big" href="https://tryhackme.com/certificate/THM-CPHXZYSWVQ" target="_blank" rel="noopener noreferrer">
+            <span class="cert-icon"><svg class="ico"><use href="#i-shield"/></svg></span>
+            <span class="cert-body">
+              <span class="cert-issuer">TryHackMe · 2026</span>
+              <span class="cert-name">AI Security</span>
+              <span class="cert-go">Verify certificate<svg class="ico"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </li>
         <li>
           <a class="card cert cert-big" href="https://learn.eccouncil.org/certificate/03f99b48-d99e-4ff8-bbbe-e60d9a8940e0" target="_blank" rel="noopener noreferrer">
             <span class="cert-icon"><svg class="ico"><use href="#i-phone"/></svg></span>
@@ -406,7 +416,7 @@
         <li>
           <a class="card cert" href="https://www.udemy.com/certificate/UC-ad683839-819a-443d-a8d2-adaa9341aab8/" target="_blank" rel="noopener noreferrer">
             <span class="cert-issuer">Udemy</span>
-            <span class="cert-name">Web Penetration Testing</span>
+            <span class="cert-name">Web Application Penetration Testing Using Kali Linux</span>
             <span class="cert-go">Verify<svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
