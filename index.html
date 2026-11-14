@@ -1,1044 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Muzammil Khan | Penetration Tester</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Meta Tags -->
-    <meta name="description"
-        content="Penetration tester skilled in ethical hacking, vulnerability assessments & network security. Blending technical expertise with a unique perspective!">
-    <meta name="keywords"
-        content="penetration testing, ethical hacking, cybersecurity, network security, vulnerability assessment">
-    <meta name="author" content="Muhammad Muzammil Khan">
-    <meta name="robots" content="index, follow">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Muhammad Muzammil Khan">
-    <meta property="og:description"
-        content="Penetration tester skilled in ethical hacking, vulnerability assessments & network security.">
-    <meta property="og:image" content="/images/mylogo.png">
-    <meta property="og:url" content="https://muzammilkhan26.github.io/portfolio/">
-    <meta property="og:type" content="website">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./mylogo.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; font-src 'self'; script-src 'self'; base-uri 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="dark light">
+
+  <title>Muhammad Muzammil Khan | Penetration Tester</title>
+  <meta name="description" content="Penetration tester in Karachi working on web and Android application security: manual testing, CVSS-scored reports and re-testing of fixes.">
+  <link rel="canonical" href="https://muzammilkhan26.github.io/portfolio/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Muhammad Muzammil Khan | Penetration Tester">
+  <meta property="og:description" content="Web and Android application security: manual testing, CVSS-scored reports and re-testing of fixes.">
+  <meta property="og:url" content="https://muzammilkhan26.github.io/portfolio/">
+  <meta property="og:image" content="https://muzammilkhan26.github.io/portfolio/assets/photo.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/orbitron.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Muzammil Khan",
+    "jobTitle": "Penetration Tester",
+    "worksFor": { "@type": "Organization", "name": "Dawateislami" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Karachi", "addressCountry": "PK" },
+    "url": "https://muzammilkhan26.github.io/portfolio/",
+    "image": "https://muzammilkhan26.github.io/portfolio/assets/photo.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/muhammadmuzammilkhan92/",
+      "https://github.com/muzammilkhan26",
+      "https://tryhackme.com/p/mmuzammilkhan"
+    ]
+  }
+  </script>
 </head>
-
 <body>
-    <!-- Loader -->
-    <div class="loader-wrapper">
-        <div class="loader-content">
-            <div class="loader-logo">
-                <span class="bracket">{</span>
-                <span class="logo-text">MMK</span>
-                <span class="bracket">}</span>
-            </div>
-            <div class="loader-text">
-                <span class="loading-char">I</span>
-                <span class="loading-char">N</span>
-                <span class="loading-char">I</span>
-                <span class="loading-char">T</span>
-                <span class="loading-char">I</span>
-                <span class="loading-char">A</span>
-                <span class="loading-char">L</span>
-                <span class="loading-char">I</span>
-                <span class="loading-char">Z</span>
-                <span class="loading-char">I</span>
-                <span class="loading-char">N</span>
-                <span class="loading-char">G</span>
-                <span class="loading-char">.</span>
-                <span class="loading-char">.</span>
-                <span class="loading-char">.</span>
-            </div>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
-            </div>
-            <div class="loader-percent">0%</div>
-        </div>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="backdrop" aria-hidden="true"><span class="glow glow-a"></span><span class="glow glow-b"></span></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <!-- Icons -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.500-3.200 8.300-8 9-4.800-.7-8-4.500-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.500 2.700 3.800 5.700 3.800 9s-1.300 6.300-3.800 9c-2.500-2.700-3.800-5.700-3.800-9S9.500 5.700 12 3z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 17.500h2"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><rect x="4" y="4" width="5" height="5" rx="1"/><rect x="15" y="4" width="5" height="5" rx="1"/><rect x="9.500" y="15" width="5" height="5" rx="1"/><path d="M6.500 9v3h11V9"/><path d="M12 12v3"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5"/><path d="M16 7l5 5-5 5"/><path d="M14 4l-4 16"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.500"/><path d="M9 20h6"/><path d="M12 16v4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.200 7-11.500a7 7 0 0 0-14 0C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.500"/><circle cx="12" cy="12" r=".6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v15H6a2 2 0 0 0-2 2V5z"/><path d="M4 20a2 2 0 0 0 2 2h13v-4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4"/><path d="M5 4h12l-2.500 4 2.500 4H5"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 6H4.500v1A3.500 3.500 0 0 0 8 10.500"/><path d="M16 6h3.500v1a3.500 3.500 0 0 1-3.500 3.500"/><path d="M12 13v4"/><path d="M8.500 20h7"/><path d="M9.500 17h5"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 3.500 5 5.500 5 10a5 5 0 0 1-10 0c0-2 1-3.500 2-4.500.3 2 1.200 2.800 2 3 0-3-1-5.500 1-8.500z"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><path d="M9 9a3 3 0 0 1 6 0"/><rect x="7" y="9" width="10" height="11" rx="5"/><path d="M12 9v11"/><path d="M3 13h4"/><path d="M17 13h4"/><path d="M4.500 7l3 2.500"/><path d="M19.500 7l-3 2.500"/><path d="M4.500 20l3-2.500"/><path d="M19.500 20l-3-2.500"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.500"/><path d="M8.500 11V8a3.500 3.500 0 0 1 7 0v3"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.500 14L7 21l5-2.500L17 21l-1.500-7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.500" width="18" height="13" rx="1.500"/><path d="M3.500 7l8.500 6 8.500-6"/></symbol>
+    <symbol id="i-terminal" viewBox="0 0 24 24"><rect x="3" y="4.500" width="18" height="15" rx="1.500"/><path d="M7 10l3 2.500L7 15"/><path d="M12.500 15H17"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#top" aria-label="Muhammad Muzammil Khan, home">mmk<span>.</span></a>
+      <nav aria-label="Sections">
+        <ul class="nav">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#writing">Writeups</a></li>
+          <li><a href="#certs">Certificates</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" hidden>Light</button>
     </div>
+  </header>
 
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
-    <div class="cursor-trail"></div>
+  <main id="main">
 
-    <!-- Cyber Grid Background -->
-    <div class="cyber-grid"></div>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Penetration Tester · Karachi, Pakistan</p>
+          <h1 aria-label="Muhammad Muzammil Khan"><span class="line" data-scramble>Muhammad</span> <span class="line" data-scramble>Muzammil</span> <span class="line outline" data-scramble>Khan</span></h1>
+          <p class="role"><span class="role-dash" aria-hidden="true"></span>I do <span class="typed" id="typed">penetration testing</span><span class="caret" aria-hidden="true"></span></p>
+          <p class="lead">I test web and Android applications for the weaknesses an attacker would use, then write the report that gets them fixed.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:muzammil.pentester.921@gmail.com">Email me</a>
+            <a class="btn" href="Muhammad_Muzammil_khan_CV.pdf" download>Download CV</a>
+          </div>
+          <ul class="links">
+            <li><a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/muzammilkhan26" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://tryhackme.com/p/mmuzammilkhan" target="_blank" rel="noopener noreferrer">TryHackMe</a></li>
+          </ul>
+        </div>
 
-    <!-- Floating Orbs -->
-    <div class="floating-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+        <div class="terminal-wrap" aria-hidden="true">
+          <span class="chip chip-a">XSS</span>
+          <span class="chip chip-b">SQLi</span>
+          <span class="chip chip-c">IDOR</span>
+          <div class="terminal" id="terminal">
+            <div class="terminal-bar">
+              <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
+              <span class="terminal-title">muzammil@kali:~</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <p class="t-cmd">whoami</p>
+              <p class="t-out">penetration_tester @ dawateislami</p>
+              <p class="t-cmd">cat focus.txt</p>
+              <p class="t-out">web apps | android apps | reporting</p>
+              <p class="t-cmd">ls findings/</p>
+              <p class="t-out">xss  sqli  idor  exposed_credentials</p>
+              <p class="t-cmd">./report --last</p>
+              <p class="t-ok">[+] 5 findings reported, fixes re-tested</p>
+              <p class="t-cmd t-idle"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to the about section"><span></span></a>
+    </section>
+
+    <!-- Numbers -->
+    <section class="wrap stats-wrap" aria-label="Key numbers">
+      <dl class="stats">
+        <div>
+          <dt><svg class="ico"><use href="#i-globe"/></svg>Web and mobile applications security-tested since September 2025</dt>
+          <dd><span data-count="80">80</span>+</dd>
+        </div>
+        <div>
+          <dt><svg class="ico"><use href="#i-file"/></svg>Security assessments completed, counting reports, re-tests and clearances</dt>
+          <dd><span data-count="110">110</span>+</dd>
+        </div>
+        <div>
+          <dt><svg class="ico"><use href="#i-phone"/></svg>Android applications tested with Frida, JADX and ADB</dt>
+          <dd><span data-count="4">4</span></dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- About -->
+    <section class="section wrap" id="about">
+      <header class="sec-head">
+        <span class="sec-ghost" aria-hidden="true">01</span>
+        <p class="sec-tag">01 / about</p>
+        <h2 aria-label="Who I am"><span data-scramble>Who</span> <span class="outline" data-scramble>I am</span></h2>
+      </header>
+
+      <div class="about-grid">
+        <figure class="portrait">
+          <div class="portrait-frame">
+            <img class="photo-dark" src="assets/photo.jpg" width="800" height="1000" alt="Portrait of Muhammad Muzammil Khan" loading="lazy">
+            <img class="photo-light" src="assets/photo-light.jpg" width="800" height="1000" alt="Portrait of Muhammad Muzammil Khan" loading="lazy">
+            <span class="scan" aria-hidden="true"></span>
+            <span class="corner c-tl" aria-hidden="true"></span><span class="corner c-tr" aria-hidden="true"></span>
+            <span class="corner c-bl" aria-hidden="true"></span><span class="corner c-br" aria-hidden="true"></span>
+          </div>
+          <figcaption><span class="dot" aria-hidden="true"></span>Dawateislami, since Sep 2025</figcaption>
+        </figure>
+
+        <div class="about-text">
+          <p class="big">I work as a penetration tester at Dawateislami, where I assess web and mobile applications from scoping to re-test.</p>
+          <p>Most of my findings are the ordinary, damaging kind: cross-site scripting, SQL injection, broken access control (IDOR) and credentials left where they should not be. On Android I use Frida, JADX and ADB to read what an app really does at runtime and how it stores data.</p>
+          <p>A finding is only useful if someone can act on it, so every report I write has an executive summary, a CVSS score, a proof of concept and a fix the developers can apply. I then re-test with them until it is closed.</p>
+
+          <dl class="facts">
+            <div class="card"><dt><svg class="ico"><use href="#i-pin"/></svg>Based in</dt><dd>Karachi, Pakistan</dd></div>
+            <div class="card"><dt><svg class="ico"><use href="#i-target"/></svg>Focus</dt><dd>Web and Android application security</dd></div>
+            <div class="card"><dt><svg class="ico"><use href="#i-book"/></svg>Learning now</dt><dd>Active Directory attacks, C for reverse engineering</dd></div>
+            <div class="card"><dt><svg class="ico"><use href="#i-chat"/></svg>Languages</dt><dd>Urdu, English, Arabic</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section wrap" id="work">
+      <header class="sec-head">
+        <span class="sec-ghost" aria-hidden="true">02</span>
+        <p class="sec-tag">02 / work</p>
+        <h2 aria-label="Work experience"><span data-scramble>Work</span> <span class="outline" data-scramble>experience</span></h2>
+      </header>
+
+      <div class="timeline" id="timeline">
+        <span class="timeline-fill" aria-hidden="true"></span>
+
+        <article class="tl-item card">
+          <span class="tl-node" aria-hidden="true"></span>
+          <header class="entry-head">
+            <div>
+              <p class="entry-kicker">Current role</p>
+              <h3>Penetration Tester</h3>
+              <p class="entry-org">Dawateislami</p>
+            </div>
+            <p class="entry-date">Sep 2025 – Present</p>
+          </header>
+          <ul class="bullets">
+            <li>Run web application assessments end to end, agreeing scope and final report with the security manager.</li>
+            <li>Find and exploit XSS, SQL injection, IDOR and exposed credentials in production systems.</li>
+            <li>Test Android apps with Frida, JADX and ADB: runtime behaviour, APK reverse engineering and insecure data handling.</li>
+            <li>Write the full report: executive summary, CVSS-scored findings, proofs of concept and remediation steps.</li>
+            <li>Work with developers to confirm each fix and track remediation through re-testing.</li>
+          </ul>
+        </article>
+
+        <article class="tl-item card case-study">
+          <span class="tl-node" aria-hidden="true"></span>
+          <div class="case-main">
+            <header class="entry-head">
+              <div>
+                <p class="entry-kicker">Engagement · confidential</p>
+                <h3>Web application penetration test</h3>
+                <p class="entry-org">A university · 2 public-facing applications</p>
+              </div>
+              <p class="entry-date">Jul 2025</p>
+            </header>
+            <p>An authorised black-box test of two live production applications. I reported five vulnerabilities of critical and medium severity. The client's name and details stay private.</p>
+            <dl class="case">
+              <div>
+                <dt>Delivered</dt>
+                <dd>An OWASP-based report with CVSS scores, a proof of concept for each finding and fixes in priority order.</dd>
+              </div>
+              <div>
+                <dt>Tools</dt>
+                <dd>
+                  <ul class="tags">
+                    <li>Burp Suite</li><li>Nmap</li><li>Gobuster</li><li>Swaks</li><li>jwt.io</li><li>Manual fuzzing</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="findings">
+            <p class="findings-title"><span class="f-dots" aria-hidden="true"><i></i><i></i><i></i></span>What I found</p>
+            <ul>
+              <li><svg class="ico"><use href="#i-lock"/></svg>Exposed <code>.env</code> file</li>
+              <li><svg class="ico"><use href="#i-lock"/></svg>SMTP credential abuse</li>
+              <li><svg class="ico"><use href="#i-lock"/></svg>JWT token leakage</li>
+              <li><svg class="ico"><use href="#i-lock"/></svg>Exposed database services</li>
+            </ul>
+            <p class="findings-foot">5 findings · critical and medium · CVSS scored</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Writeups -->
+    <section class="section wrap" id="writing">
+      <header class="sec-head">
+        <span class="sec-ghost" aria-hidden="true">03</span>
+        <p class="sec-tag">03 / writing</p>
+        <h2 aria-label="Writeups and open source"><span data-scramble>Writeups</span> <span class="outline" data-scramble>&amp; open source</span></h2>
+      </header>
+
+      <a class="feature card" href="https://github.com/muzammilkhan26/pentester-roadmap" target="_blank" rel="noopener noreferrer">
+        <div class="feature-text">
+          <p class="feature-kicker">Open source</p>
+          <h3>Pentester Roadmap</h3>
+          <p>A free path into penetration testing built only from TryHackMe's free rooms, from fundamentals to Active Directory, red teaming and reporting.</p>
+          <span class="go">View on GitHub</span>
+        </div>
+        <div class="feature-side">
+          <div class="phases" id="phases" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <ul class="mini-stats">
+            <li><b>370+</b>rooms</li>
+            <li><b>21</b>phases</li>
+            <li><b>Free</b>no subscription</li>
+          </ul>
+        </div>
+      </a>
+
+      <p class="list-title">TryHackMe writeups</p>
+      <ul class="grid grid-3">
+        <li>
+          <a class="card tile" href="https://github.com/muzammilkhan26/thm-writeups/blob/main/Spring4Shell.md" target="_blank" rel="noopener noreferrer">
+            <span class="tile-tag">Remote code execution</span>
+            <h3>Spring4Shell</h3>
+            <p>Exploiting CVE-2022-22965 in a Spring application to run code on the server.</p>
+            <span class="tile-go">Read writeup<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card tile" href="https://github.com/muzammilkhan26/thm-writeups/blob/main/SQL-Injection.md" target="_blank" rel="noopener noreferrer">
+            <span class="tile-tag">Injection</span>
+            <h3>SQL injection</h3>
+            <p>From one injectable parameter to a full dump of the database.</p>
+            <span class="tile-go">Read writeup<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card tile" href="https://github.com/muzammilkhan26/thm-writeups/blob/main/IDOR.md" target="_blank" rel="noopener noreferrer">
+            <span class="tile-tag">Broken access control</span>
+            <h3>IDOR</h3>
+            <p>Changing a user ID in the URL to read another user's profile and orders.</p>
+            <span class="tile-go">Read writeup<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card tile" href="https://github.com/muzammilkhan26/thm-writeups/blob/main/Authentication-Bypass.md" target="_blank" rel="noopener noreferrer">
+            <span class="tile-tag">Broken access control</span>
+            <h3>Authentication bypass</h3>
+            <p>Getting past a login check without valid credentials.</p>
+            <span class="tile-go">Read writeup<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card tile" href="https://github.com/muzammilkhan26/thm-writeups/blob/main/LFI-File-Inclusion.md" target="_blank" rel="noopener noreferrer">
+            <span class="tile-tag">File inclusion</span>
+            <h3>Local file inclusion</h3>
+            <p>Reading files from the server through a file inclusion parameter.</p>
+            <span class="tile-go">Read writeup<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card tile tile-more" href="https://github.com/muzammilkhan26/thm-writeups" target="_blank" rel="noopener noreferrer">
+            <span class="tile-tag">GitHub</span>
+            <h3>All writeups</h3>
+            <p>The full repository, with new writeups as I finish them.</p>
+            <span class="tile-go">Open repository<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="list-title">Practice labs</p>
+      <a class="card thm" href="https://tryhackme.com/p/mmuzammilkhan" target="_blank" rel="noopener noreferrer">
+        <div class="thm-head">
+          <span class="skill-icon"><svg class="ico"><use href="#i-flag"/></svg></span>
+          <div>
+            <h3>TryHackMe</h3>
+            <p>Where I try new techniques before I use them on a real target.</p>
+          </div>
+        </div>
+        <ul class="mini-stats">
+          <li><b>Top 3%</b>global rank</li>
+          <li><b>128</b>rooms completed</li>
+          <li><b>73</b>day streak</li>
+        </ul>
+        <span class="tile-go">View profile<svg class="ico"><use href="#i-arrow"/></svg></span>
+      </a>
+      <p class="note">TryHackMe figures as of November 2026.</p>
+    </section>
+
+    <!-- Certificates -->
+    <section class="section wrap" id="certs">
+      <header class="sec-head">
+        <span class="sec-ghost" aria-hidden="true">04</span>
+        <p class="sec-tag">04 / credentials</p>
+        <h2 aria-label="Certificates and training"><span data-scramble>Certificates</span> <span class="outline" data-scramble>&amp; training</span></h2>
+      </header>
+
+      <ul class="grid grid-2 cert-top">
+        <li>
+          <a class="card cert cert-big" href="https://learn.eccouncil.org/certificate/03f99b48-d99e-4ff8-bbbe-e60d9a8940e0" target="_blank" rel="noopener noreferrer">
+            <span class="cert-icon"><svg class="ico"><use href="#i-phone"/></svg></span>
+            <span class="cert-body">
+              <span class="cert-issuer">EC-Council</span>
+              <span class="cert-name">Android Bug Bounty Hunting: Hunt Like a Rat</span>
+              <span class="cert-go">Verify certificate<svg class="ico"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="card cert cert-big" href="https://learn.eccouncil.org/certificate/e7c14e13-7fc7-432f-a2cd-086c78efd159" target="_blank" rel="noopener noreferrer">
+            <span class="cert-icon"><svg class="ico"><use href="#i-award"/></svg></span>
+            <span class="cert-body">
+              <span class="cert-issuer">EC-Council</span>
+              <span class="cert-name">SQL Injection Attacks</span>
+              <span class="cert-go">Verify certificate<svg class="ico"><use href="#i-arrow"/></svg></span>
+            </span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="grid grid-4 cert-rest">
+        <li>
+          <a class="card cert" href="https://tryhackme.com/r/certificate/THM-V9W18SXJBK" target="_blank" rel="noopener noreferrer">
+            <span class="cert-issuer">TryHackMe</span>
+            <span class="cert-name">CompTIA Pentest+ learning path</span>
+            <span class="cert-go">Verify<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card cert" href="https://tryhackme.com/r/certificate/THM-6I7MZAHWKL" target="_blank" rel="noopener noreferrer">
+            <span class="cert-issuer">TryHackMe</span>
+            <span class="cert-name">Jr Penetration Tester</span>
+            <span class="cert-go">Verify<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card cert" href="https://www.udemy.com/certificate/UC-ad683839-819a-443d-a8d2-adaa9341aab8/" target="_blank" rel="noopener noreferrer">
+            <span class="cert-issuer">Udemy</span>
+            <span class="cert-name">Web Penetration Testing</span>
+            <span class="cert-go">Verify<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card cert" href="https://tryhackme.com/r/certificate/THM-JPJFYXRSLY" target="_blank" rel="noopener noreferrer">
+            <span class="cert-issuer">TryHackMe</span>
+            <span class="cert-name">Web Fundamentals</span>
+            <span class="cert-go">Verify<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card cert" href="https://tryhackme.com/r/certificate/THM-8NGC8M2SJZ" target="_blank" rel="noopener noreferrer">
+            <span class="cert-issuer">TryHackMe</span>
+            <span class="cert-name">Introduction to Cyber Security</span>
+            <span class="cert-go">Verify<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="card cert" href="https://tryhackme.com/r/certificate/THM-WEFUWUAMHL" target="_blank" rel="noopener noreferrer">
+            <span class="cert-issuer">TryHackMe</span>
+            <span class="cert-name">Pre Security</span>
+            <span class="cert-go">Verify<svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <div class="card cert cert-static">
+            <span class="cert-issuer">Bano Qabil</span>
+            <span class="cert-name">Cyber Security-2: Ethical Hacking and Penetration Testing</span>
+            <span class="cert-go">Training course</span>
+          </div>
+        </li>
+        <li>
+          <div class="card cert cert-static">
+            <span class="cert-issuer">Bano Qabil</span>
+            <span class="cert-name">Cyber Security Fundamentals: SOC Analyst</span>
+            <span class="cert-go">Training course</span>
+          </div>
+        </li>
+      </ul>
+      <p class="note">The CompTIA Pentest+ entry is TryHackMe's learning path for that exam, not the CompTIA certification itself.</p>
+    </section>
+
+    <!-- Skills -->
+    <section class="section wrap" id="skills">
+      <header class="sec-head">
+        <span class="sec-ghost" aria-hidden="true">05</span>
+        <p class="sec-tag">05 / skills</p>
+        <h2 aria-label="My toolkit"><span data-scramble>My</span> <span class="outline" data-scramble>toolkit</span></h2>
+      </header>
+
+      <ul class="grid grid-3 skills-grid">
+        <li class="card skill">
+          <span class="skill-icon"><svg class="ico"><use href="#i-globe"/></svg></span>
+          <h3>Web applications</h3>
+          <p>OWASP Top 10, black-box and grey-box testing.</p>
+          <ul class="tags"><li>Burp Suite</li><li>SQLMap</li><li>FFUF</li><li>Gobuster</li></ul>
+        </li>
+        <li class="card skill">
+          <span class="skill-icon"><svg class="ico"><use href="#i-phone"/></svg></span>
+          <h3>Android applications</h3>
+          <p>Runtime analysis and APK reverse engineering.</p>
+          <ul class="tags"><li>Frida</li><li>JADX</li><li>ADB</li></ul>
+        </li>
+        <li class="card skill">
+          <span class="skill-icon"><svg class="ico"><use href="#i-network"/></svg></span>
+          <h3>Network and passwords</h3>
+          <p>Scanning, enumeration and credential attacks.</p>
+          <ul class="tags"><li>Nmap</li><li>Wireshark</li><li>Metasploit</li><li>Hydra</li><li>Hashcat</li><li>John the Ripper</li><li>Swaks</li></ul>
+        </li>
+        <li class="card skill">
+          <span class="skill-icon"><svg class="ico"><use href="#i-file"/></svg></span>
+          <h3>Reporting</h3>
+          <p>Reports a developer and a manager can both act on.</p>
+          <ul class="tags"><li>CVSS scoring</li><li>Proofs of concept</li><li>Remediation</li><li>Re-testing</li></ul>
+        </li>
+        <li class="card skill">
+          <span class="skill-icon"><svg class="ico"><use href="#i-code"/></svg></span>
+          <h3>Scripting</h3>
+          <p>Automating recon and writing small tools.</p>
+          <ul class="tags"><li>Python</li><li>Bash</li><li>JavaScript</li></ul>
+        </li>
+        <li class="card skill">
+          <span class="skill-icon"><svg class="ico"><use href="#i-monitor"/></svg></span>
+          <h3>Systems</h3>
+          <p>The environments I work in every day.</p>
+          <ul class="tags"><li>Kali Linux</li><li>Ubuntu</li><li>Linux Mint</li><li>Windows</li></ul>
+        </li>
+      </ul>
+
+      <div class="marquee" aria-hidden="true">
+        <ul class="marquee-track">
+          <li>Burp Suite</li><li>Nmap</li><li>Frida</li><li>JADX</li><li>ADB</li><li>SQLMap</li><li>FFUF</li><li>Gobuster</li><li>Metasploit</li><li>Wireshark</li><li>Hydra</li><li>Hashcat</li><li>John the Ripper</li><li>Swaks</li>
+          <li>Burp Suite</li><li>Nmap</li><li>Frida</li><li>JADX</li><li>ADB</li><li>SQLMap</li><li>FFUF</li><li>Gobuster</li><li>Metasploit</li><li>Wireshark</li><li>Hydra</li><li>Hashcat</li><li>John the Ripper</li><li>Swaks</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section wrap" id="education">
+      <header class="sec-head">
+        <span class="sec-ghost" aria-hidden="true">06</span>
+        <p class="sec-tag">06 / education</p>
+        <h2 aria-label="Education"><span data-scramble>Education</span></h2>
+      </header>
+
+      <ol class="edu">
+        <li><span class="edu-dot" aria-hidden="true"></span><h3>Matric</h3><p>Tanzeem ul Madaris Ahl e Sunnat Board</p><p class="edu-place">Karachi</p></li>
+        <li><span class="edu-dot" aria-hidden="true"></span><h3>F.A</h3><p>Tanzeem ul Madaris Ahl e Sunnat Board</p><p class="edu-place">Karachi</p></li>
+        <li><span class="edu-dot" aria-hidden="true"></span><h3>B.A</h3><p>Tanzeem ul Madaris Ahl e Sunnat Board</p><p class="edu-place">Karachi</p></li>
+        <li><span class="edu-dot" aria-hidden="true"></span><h3>M.A</h3><p>Kanz ul Madaris Board</p><p class="edu-place">Karachi</p></li>
+      </ol>
+    </section>
+
+    <!-- Contact -->
+    <section class="section wrap" id="contact">
+      <header class="sec-head">
+        <span class="sec-ghost" aria-hidden="true">07</span>
+        <p class="sec-tag">07 / contact</p>
+        <h2 aria-label="Get in touch"><span data-scramble>Get</span> <span class="outline" data-scramble>in touch</span></h2>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-text">
+          <p class="big">For a security assessment, a question about my work or a writeup you want to discuss, email is the fastest way to reach me.</p>
+
+          <div class="email-card card">
+            <span class="skill-icon"><svg class="ico"><use href="#i-mail"/></svg></span>
+            <div class="email-body">
+              <span class="cert-issuer">Email</span>
+              <a class="email" href="mailto:muzammil.pentester.921@gmail.com" id="emailLink">muzammil.pentester.921@gmail.com</a>
+            </div>
+            <button class="btn btn-small" id="copyEmail" type="button" hidden>Copy</button>
+            <span class="copied" id="copyStatus" role="status" aria-live="polite"></span>
+          </div>
+
+          <ul class="links">
+            <li><a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/muzammilkhan26" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://tryhackme.com/p/mmuzammilkhan" target="_blank" rel="noopener noreferrer">TryHackMe</a></li>
+          </ul>
+        </div>
+
+        <form class="form card" action="mailto:muzammil.pentester.921@gmail.com" method="get">
+          <p class="form-title"><span class="f-dots" aria-hidden="true"><i></i><i></i><i></i></span>new_message</p>
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" required autocomplete="off">
+          <label for="body">Message</label>
+          <textarea id="body" name="body" rows="5" required></textarea>
+          <button class="btn btn-primary" type="submit">Open in my email app</button>
+          <p class="note">This opens a draft in your own email app. Nothing is sent from this page.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p>© <span id="year">2026</span> Muhammad Muzammil Khan</p>
     </div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand glitch-hover" href="#" data-text="{MMK}">
-                <span class="brand-bracket">{</span>MMK<span class="brand-bracket">}</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="toggler-line"></span>
-                <span class="toggler-line"></span>
-                <span class="toggler-line"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#hero"><span data-text="Home">Home</span></a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#about"><span data-text="About">About</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience"><span
-                                data-text="Experience">Experience</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects"><span
-                                data-text="Projects">Projects</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education"><span
-                                data-text="Education">Education</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications"><span
-                                data-text="Certificates">Certificates</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills"><span data-text="Skills">Skills</span></a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#contact"><span
-                                data-text="Contact">Contact</span></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-bg-text">HACKER</div>
-        <div class="container">
-            <div class="row align-items-center min-vh-100">
-                <div class="col-lg-7">
-                    <div class="hero-content">
-                        <div class="hero-badge" data-aos="fade-right">
-                            <span class="badge-dot"></span>
-                            <span>Available for Projects</span>
-                        </div>
-
-                        <h1 class="hero-name">
-                            <span class="line line-1">
-                                <span class="word" data-text="Muhammad">Muhammad</span>
-                            </span>
-                            <span class="line line-2">
-                                <span class="word" data-text="Muzammil">Muzammil</span>
-                            </span>
-                            <span class="line line-3">
-                                <span class="word outline-text" data-text="Khan">Khan</span>
-                            </span>
-                        </h1>
-
-                        <div class="hero-role">
-                            <span class="role-line"></span>
-                            <span class="role-text">
-                                <span class="static-text">I'm a</span>
-                                <span id="typewriter" class="dynamic-text"></span>
-                                <span class="cursor-blink">|</span>
-                            </span>
-                        </div>
-
-                        <p class="hero-description">
-                            Penetration Tester specializing in web and mobile application security.
-                            <span class="highlight-text">Finding real-world vulnerabilities and delivering actionable
-                                security reports for production environments.</span>
-                        </p>
-
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn-primary-custom magnetic-btn">
-                                <span class="btn-text">Get in Touch</span>
-                                <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
-                                <span class="btn-bg"></span>
-                            </a>
-                            <a href="Muhammad_Muzammil_khan_CV.pdf" download class="btn-secondary-custom magnetic-btn">
-                                <span class="btn-text">Download CV</span>
-                                <span class="btn-icon"><i class="fas fa-download"></i></span>
-                            </a>
-                        </div>
-
-                        <div class="hero-social">
-                            <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" target="_blank"
-                                class="social-link magnetic-btn" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                                <span class="social-tooltip">LinkedIn</span>
-                            </a>
-                            <a href="https://github.com/muzammilkhan26" target="_blank" class="social-link magnetic-btn"
-                                aria-label="GitHub">
-                                <i class="fab fa-github"></i>
-                                <span class="social-tooltip">GitHub</span>
-                            </a>
-                            <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank"
-                                class="social-link magnetic-btn" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                                <span class="social-tooltip">Facebook</span>
-                            </a>
-                            <a href="mailto:muzammil.pentester.921@gmail.com" class="social-link magnetic-btn"
-                                aria-label="Email">
-                                <i class="fas fa-envelope"></i>
-                                <span class="social-tooltip">Email</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-none d-lg-block">
-                    <div class="hero-visual">
-                        <div class="terminal-window">
-                            <div class="terminal-header">
-                                <div class="terminal-dots">
-                                    <span class="terminal-dot red"></span>
-                                    <span class="terminal-dot yellow"></span>
-                                    <span class="terminal-dot green"></span>
-                                </div>
-                                <span class="terminal-title">muzammil@kali:~</span>
-                            </div>
-                            <div class="terminal-body">
-                                <div class="terminal-line" data-delay="0">
-                                    <span class="prompt">$</span>
-                                    <span class="command" data-text="whoami">whoami</span>
-                                </div>
-                                <div class="terminal-output" data-delay="1">penetration_tester</div>
-                                <div class="terminal-line" data-delay="2">
-                                    <span class="prompt">$</span>
-                                    <span class="command" data-text="cat skills.txt">cat skills.txt</span>
-                                </div>
-                                <div class="terminal-output" data-delay="3">OWASP Top 10 | Network Security</div>
-                                <div class="terminal-output" data-delay="4">Black-box Testing | CTF Player</div>
-                                <div class="terminal-line" data-delay="5">
-                                    <span class="prompt">$</span>
-                                    <span class="command" data-text="./exploit.sh">./exploit.sh</span>
-                                </div>
-                                <div class="terminal-output success" data-delay="6">[+] Access Granted!</div>
-                                <div class="terminal-line" data-delay="7">
-                                    <span class="prompt">$</span>
-                                    <span class="typing-cursor">_</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Floating Elements -->
-                        <div class="floating-element el-1">
-                            <i class="fas fa-shield-halved"></i>
-                        </div>
-                        <div class="floating-element el-2">
-                            <i class="fas fa-bug"></i>
-                        </div>
-                        <div class="floating-element el-3">
-                            <i class="fas fa-terminal"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <div class="scroll-text">
-                <span>S</span><span>C</span><span>R</span><span>O</span><span>L</span><span>L</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-bg-text">ABOUT</div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">01.</span>
-                <h2 class="section-title split-text">
-                    <span class="word">Who</span>
-                    <span class="word outline-text">Am I?</span>
-                </h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="row align-items-center g-5">
-                <div class="col-lg-5">
-                    <div class="about-image-wrapper reveal-left">
-                        <div class="about-image">
-                            <div class="image-container">
-                                <!-- Replace with your actual image -->
-                                <img src="./myimage.jpg" alt="Muhammad Muzammil Khan" class="profile-img">
-
-                                <!-- Fallback Placeholder if no image -->
-                                <!-- <div class="image-placeholder">
-                                    <i class="fas fa-user-secret"></i>
-                                    <div class="scan-line"></div>
-                                </div> -->
-                            </div>
-                            <div class="image-border"></div>
-                            <div class="image-corner corner-tl"></div>
-                            <div class="image-corner corner-tr"></div>
-                            <div class="image-corner corner-bl"></div>
-                            <div class="image-corner corner-br"></div>
-                            <div class="image-glitch-overlay"></div>
-                        </div>
-
-                        <div class="floating-card card-1">
-                            <div class="card-icon"><i class="fas fa-shield-halved"></i></div>
-                            <div class="card-text">
-                                <span class="card-number">5+</span>
-                                <span class="card-label">Vulns Found</span>
-                            </div>
-                        </div>
-
-                        <div class="floating-card card-2">
-                            <div class="card-icon"><i class="fas fa-certificate"></i></div>
-                            <div class="card-text">
-                                <span class="card-number">7</span>
-                                <span class="card-label">Certifications</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="about-content reveal-right">
-                        <h3 class="about-subtitle">
-                            Penetration Tester &
-                            <span class="text-gradient">Security Researcher</span>
-                        </h3>
-
-                        <div class="about-text">
-                            <p>
-                                Penetration Tester currently working at Dawateislami, conducting web and mobile
-                                application security assessments. Experienced in identifying and exploiting real-world
-                                vulnerabilities including XSS, SQL Injection, IDOR, and credential exposure across
-                                production environments.
-                            </p>
-                            <p>
-                                Skilled in end-to-end engagement delivery — from scoping and exploitation to full report
-                                writing with CVSS scoring, PoCs, and remediation guidance. Focused on mobile security
-                                using Frida, JADX, and ADB for runtime analysis and APK reverse engineering.
-                            </p>
-                        </div>
-
-                        <div class="about-info">
-                            <div class="info-item">
-                                <span class="info-icon"><i class="fas fa-user"></i></span>
-                                <span class="info-label">Name</span>
-                                <span class="info-value">Muhammad Muzammil Khan</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon"><i class="fas fa-envelope"></i></span>
-                                <span class="info-label">Email</span>
-                                <span class="info-value">muzammil.pentester.921@gmail.com</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon"><i class="fas fa-phone"></i></span>
-                                <span class="info-label">Phone</span>
-                                <span class="info-value">+92-319-2025919</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon"><i class="fas fa-location-dot"></i></span>
-                                <span class="info-label">Location</span>
-                                <span class="info-value">Karachi, Pakistan</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="info-icon"><i class="fas fa-language"></i></span>
-                                <span class="info-label">Languages</span>
-                                <span class="info-value">Urdu, English, Arabic</span>
-                            </div>
-                        </div>
-
-                        <div class="about-stats">
-                            <div class="stat-box">
-                                <span class="stat-number counter" data-target="5">0</span>
-                                <span class="stat-label">Critical Vulns</span>
-                                <div class="stat-bar"></div>
-                            </div>
-                            <div class="stat-box">
-                                <span class="stat-number counter" data-target="2">0</span>
-                                <span class="stat-label">Projects</span>
-                                <div class="stat-bar"></div>
-                            </div>
-                            <div class="stat-box">
-                                <span class="stat-number counter" data-target="67">0</span>
-                                <span class="stat-label">Rooms Completed</span>
-                                <div class="stat-bar"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-        <div class="section-bg-text">WORK</div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">02.</span>
-                <h2 class="section-title split-text">
-                    <span class="word">Work</span>
-                    <span class="word outline-text">Experience</span>
-                </h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-line">
-                    <div class="timeline-progress"></div>
-                </div>
-
-                <div class="timeline-item reveal-up">
-                    <div class="timeline-marker">
-                        <div class="marker-dot">
-                            <div class="marker-pulse"></div>
-                        </div>
-                    </div>
-                    <div class="timeline-content" data-tilt>
-                        <div class="timeline-header">
-                            <span class="timeline-date">
-                                <i class="far fa-calendar-alt"></i>
-                                September 2025 – Present
-                            </span>
-                            <span class="timeline-badge">Current</span>
-                        </div>
-                        <h4 class="timeline-title">Penetration Tester</h4>
-                        <h5 class="timeline-company">
-                            <i class="fas fa-building"></i>
-                            Dawateislami
-                        </h5>
-                        <ul class="timeline-list">
-                            <li>
-                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
-                                Conduct end-to-end web application security assessments, coordinating with the security
-                                manager for scope definition and final report review.
-                            </li>
-                            <li>
-                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
-                                Identify and exploit real-world vulnerabilities including XSS, SQL Injection, IDOR, and
-                                confidential credential exposure across production systems.
-                            </li>
-                            <li>
-                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
-                                Perform mobile application penetration testing using Frida, JADX, and ADB to analyze
-                                runtime behavior, reverse engineer APKs, and identify insecure data handling.
-                            </li>
-                            <li>
-                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
-                                Author complete penetration test reports including executive summaries, CVSS-scored
-                                findings, Proof-of-Concepts, and actionable remediation guidance.
-                            </li>
-                            <li>
-                                <span class="list-icon"><i class="fas fa-chevron-right"></i></span>
-                                Collaborate directly with development teams to validate vulnerability fixes and track
-                                remediation progress through re-testing.
-                            </li>
-                        </ul>
-                        <div class="card-glow"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="section-bg-text">PROJECTS</div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">03.</span>
-                <h2 class="section-title split-text">
-                    <span class="word">Featured</span>
-                    <span class="word outline-text">Projects</span>
-                </h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="row g-4">
-                <!-- Main Project -->
-                <div class="col-lg-12">
-                    <div class="project-card featured reveal-left" data-tilt>
-                        <div class="project-number">01</div>
-                        <div class="project-header">
-                            <div class="project-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <span class="project-badge">Confidential</span>
-                        </div>
-                        <h4 class="project-title">Web Application Penetration Testing</h4>
-                        <p class="project-client">Confidential University | Scope: 2 Public-Facing Applications</p>
-                        <p class="project-description">
-                            Conducted authorized black-box penetration testing on live production applications.
-                        </p>
-                        <ul class="project-highlights">
-                            <li>Discovered and exploited 5 critical and medium-severity vulnerabilities including
-                                environment file exposure (.env leakage), SMTP credential abuse, JWT token leakage, and
-                                exposed database services.</li>
-                            <li>Delivered a full OWASP-based report with CVSS scores, detailed PoCs, and prioritized
-                                remediation steps.</li>
-                            <li>Tools used: Burp Suite, Nmap, Gobuster, Swaks, jwt.io, manual fuzzing and recon
-                                techniques.</li>
-                        </ul>
-                        <div class="project-tags">
-                            <span>Burp Suite</span>
-                            <span>Nmap</span>
-                            <span>Gobuster</span>
-                            <span>Swaks</span>
-                            <span>jwt.io</span>
-                        </div>
-                        <div class="project-footer">
-                            <span class="project-date">
-                                <i class="far fa-calendar"></i>
-                                July 2025
-                            </span>
-                        </div>
-                        <div class="card-glow"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="section-bg-text">EDU</div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">04.</span>
-                <h2 class="section-title split-text">
-                    <span class="word">Education</span>
-                    <span class="word outline-text">Background</span>
-                </h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="education-grid">
-                <div class="edu-card reveal-up" data-delay="0">
-                    <div class="edu-marker">
-                        <span class="marker-line"></span>
-                        <span class="marker-dot"></span>
-                    </div>
-                    <div class="edu-content">
-                        <h5>M.A</h5>
-                        <p>Kanz ul Madaris Board</p>
-                        <span class="edu-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Karachi, Pakistan
-                        </span>
-                    </div>
-                </div>
-
-                <div class="edu-card reveal-up" data-delay="100">
-                    <div class="edu-marker">
-                        <span class="marker-line"></span>
-                        <span class="marker-dot"></span>
-                    </div>
-                    <div class="edu-content">
-                        <h5>B.A</h5>
-                        <p>Tanzeem ul Madaris Ahl e Sunnat Board</p>
-                        <span class="edu-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Karachi, Pakistan
-                        </span>
-                    </div>
-                </div>
-
-                <div class="edu-card reveal-up" data-delay="200">
-                    <div class="edu-marker">
-                        <span class="marker-line"></span>
-                        <span class="marker-dot"></span>
-                    </div>
-                    <div class="edu-content">
-                        <h5>F.A</h5>
-                        <p>Tanzeem ul Madaris Ahl e Sunnat Board</p>
-                        <span class="edu-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Karachi, Pakistan
-                        </span>
-                    </div>
-                </div>
-
-                <div class="edu-card reveal-up" data-delay="300">
-                    <div class="edu-marker">
-                        <span class="marker-line"></span>
-                        <span class="marker-dot"></span>
-                    </div>
-                    <div class="edu-content">
-                        <h5>Matric</h5>
-                        <p>Tanzeem ul Madaris Ahl e Sunnat Board</p>
-                        <span class="edu-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Karachi, Pakistan
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications">
-        <div class="section-bg-text">CERTS</div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">05.</span>
-                <h2 class="section-title split-text">
-                    <span class="word">Certifications</span>
-                    <span class="word outline-text">& Training</span>
-                </h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="cert-grid">
-
-                <div class="cert-card reveal-up" data-tilt data-delay="0">
-                    <div class="cert-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                        <div class="icon-glow"></div>
-                    </div>
-                    <h5 class="cert-title">Android Bug Bounty Hunting: Hunt Like a Rat</h5>
-                    <p class="cert-issuer">EC-Council</p>
-                    <a href="https://learn.eccouncil.org/certificate/03f99b48-d99e-4ff8-bbbe-e60d9a8940e0"
-                        target="_blank" class="cert-link">View Certificate</a>
-                    <div class="cert-line"></div>
-                </div>
-                <div class="cert-card reveal-up" data-tilt data-delay="0">
-                    <div class="cert-icon">
-                        <i class="fas fa-database"></i>
-                        <div class="icon-glow"></div>
-                    </div>
-                    <h5 class="cert-title">SQL Injection Attacks</h5>
-                    <p class="cert-issuer">EC-Council</p>
-                    <a href="https://learn.eccouncil.org/certificate/e7c14e13-7fc7-432f-a2cd-086c78efd159"
-                        target="_blank" class="cert-link">View Certificate</a>
-                    <div class="cert-line"></div>
-                </div>
-
-                <div class="cert-card reveal-up" data-tilt data-delay="100">
-                    <div class="cert-icon">
-                        <i class="fas fa-user-ninja"></i>
-                        <div class="icon-glow"></div>
-                    </div>
-                    <h5 class="cert-title">Jr Penetration Tester</h5>
-                    <p class="cert-issuer">TryHackMe</p>
-                    <a href="https://tryhackme.com/r/certificate/THM-6I7MZAHWKL" target="_blank" class="cert-link">View
-                        Certificate</a>
-                    <div class="cert-line"></div>
-                </div>
-
-                <div class="cert-card reveal-up" data-tilt data-delay="200">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield-alt"></i>
-                        <div class="icon-glow"></div>
-                    </div>
-                    <h5 class="cert-title">CompTIA Pentest+</h5>
-                    <p class="cert-issuer">TryHackMe</p>
-                    <a href="https://tryhackme.com/r/certificate/THM-V9W18SXJBK" target="_blank" class="cert-link">View
-                        Certificate</a>
-                    <div class="cert-line"></div>
-                </div>
-
-                <div class="cert-card reveal-up" data-tilt data-delay="300">
-                    <div class="cert-icon">
-                        <i class="fas fa-lock"></i>
-                        <div class="icon-glow"></div>
-                    </div>
-                    <h5 class="cert-title">Pre Security</h5>
-                    <p class="cert-issuer">TryHackMe</p>
-                    <a href="https://tryhackme.com/r/certificate/THM-WEFUWUAMHL" target="_blank" class="cert-link">View
-                        Certificate</a>
-                    <div class="cert-line"></div>
-                </div>
-
-                <div class="cert-card reveal-up" data-tilt data-delay="400">
-                    <div class="cert-icon">
-                        <i class="fas fa-globe"></i>
-                        <div class="icon-glow"></div>
-                    </div>
-                    <h5 class="cert-title">Web Fundamentals</h5>
-                    <p class="cert-issuer">TryHackMe</p>
-                    <a href="https://tryhackme.com/r/certificate/THM-JPJFYXRSLY" target="_blank" class="cert-link">View
-                        Certificate</a>
-                    <div class="cert-line"></div>
-                </div>
-
-                <div class="cert-card reveal-up" data-tilt data-delay="500">
-                    <div class="cert-icon">
-                        <i class="fas fa-shield-alt"></i>
-                        <div class="icon-glow"></div>
-                    </div>
-                    <h5 class="cert-title">Introduction to Cyber Security</h5>
-                    <p class="cert-issuer">TryHackMe</p>
-                    <a href="https://tryhackme.com/r/certificate/THM-8NGC8M2SJZ" target="_blank" class="cert-link">View
-                        Certificate</a>
-                    <div class="cert-line"></div>
-                </div>
-
-                <div class="cert-card reveal-up" data-tilt data-delay="600">
-                    <div class="cert-icon">
-                        <i class="fas fa-terminal"></i>
-                        <div class="icon-glow"></div>
-                    </div>
-                    <h5 class="cert-title">Web Penetration Testing</h5>
-                    <p class="cert-issuer">Udemy</p>
-                    <a href="https://www.udemy.com/certificate/UC-ad683839-819a-443d-a8d2-adaa9341aab8/?"
-                        target="_blank" class="cert-link">View Certificate</a>
-                    <div class="cert-line"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-bg-text">SKILLS</div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">06.</span>
-                <h2 class="section-title split-text">
-                    <span class="word">My</span>
-                    <span class="word outline-text">Arsenal</span>
-                </h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="skill-card reveal-up" data-tilt>
-                        <div class="skill-card-header">
-                            <div class="skill-icon">
-                                <i class="fas fa-crosshairs"></i>
-                            </div>
-                            <h4>Penetration Testing</h4>
-                        </div>
-                        <p class="skill-description">Experienced in identifying and exploiting vulnerabilities in web
-                            and mobile applications and networks.</p>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Web Application Security (OWASP Top 10)</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Mobile Application Security (Android)</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Network Scanning & Enumeration</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Black-box & Grey-box Testing</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>CVSS Reporting & PoC Development</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-glow"></div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="skill-card reveal-up" data-tilt data-delay="200">
-                        <div class="skill-card-header">
-                            <div class="skill-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <h4>Programming</h4>
-                        </div>
-                        <p class="skill-description">Proficient in scripting languages for automation and exploit
-                            development.</p>
-                        <div class="skill-items">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Python — Scripting, Automation, Exploit Dev</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>Bash — Recon Automation, Tool Chaining</span>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span>JavaScript — XSS Payloads, Logic Analysis</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-glow"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tools Marquee -->
-            <div class="tools-marquee">
-                <div class="marquee-track">
-                    <div class="marquee-content">
-                        <span class="tool-tag"><i class="fas fa-search"></i> Nmap</span>
-                        <span class="tool-tag"><i class="fas fa-network-wired"></i> Wireshark</span>
-                        <span class="tool-tag"><i class="fas fa-bug"></i> Burp Suite</span>
-                        <span class="tool-tag"><i class="fas fa-skull"></i> Metasploit</span>
-                        <span class="tool-tag"><i class="fas fa-key"></i> Hydra</span>
-                        <span class="tool-tag"><i class="fas fa-bolt"></i> FFUF</span>
-                        <span class="tool-tag"><i class="fas fa-lock"></i> Hashcat</span>
-                        <span class="tool-tag"><i class="fas fa-unlock"></i> John the Ripper</span>
-                        <span class="tool-tag"><i class="fas fa-database"></i> SQLMap</span>
-                        <span class="tool-tag"><i class="fas fa-folder-open"></i> Gobuster</span>
-                        <span class="tool-tag"><i class="fas fa-mobile-alt"></i> Frida</span>
-                        <span class="tool-tag"><i class="fas fa-code"></i> JADX</span>
-                        <span class="tool-tag"><i class="fas fa-terminal"></i> ADB</span>
-                        <span class="tool-tag"><i class="fas fa-envelope"></i> Swaks</span>
-                    </div>
-                    <div class="marquee-content">
-                        <span class="tool-tag"><i class="fas fa-search"></i> Nmap</span>
-                        <span class="tool-tag"><i class="fas fa-network-wired"></i> Wireshark</span>
-                        <span class="tool-tag"><i class="fas fa-bug"></i> Burp Suite</span>
-                        <span class="tool-tag"><i class="fas fa-skull"></i> Metasploit</span>
-                        <span class="tool-tag"><i class="fas fa-key"></i> Hydra</span>
-                        <span class="tool-tag"><i class="fas fa-bolt"></i> FFUF</span>
-                        <span class="tool-tag"><i class="fas fa-lock"></i> Hashcat</span>
-                        <span class="tool-tag"><i class="fas fa-unlock"></i> John the Ripper</span>
-                        <span class="tool-tag"><i class="fas fa-database"></i> SQLMap</span>
-                        <span class="tool-tag"><i class="fas fa-folder-open"></i> Gobuster</span>
-                        <span class="tool-tag"><i class="fas fa-mobile-alt"></i> Frida</span>
-                        <span class="tool-tag"><i class="fas fa-code"></i> JADX</span>
-                        <span class="tool-tag"><i class="fas fa-terminal"></i> ADB</span>
-                        <span class="tool-tag"><i class="fas fa-envelope"></i> Swaks</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Operating Systems -->
-            <div class="os-section">
-                <h4 class="subsection-title">
-                    <span class="line"></span>
-                    <span>Operating Systems</span>
-                    <span class="line"></span>
-                </h4>
-                <div class="os-grid">
-                    <div class="os-item reveal-up" data-delay="0">
-                        <div class="os-icon"><i class="fab fa-windows"></i></div>
-                        <span>Windows</span>
-                    </div>
-                    <div class="os-item reveal-up" data-delay="100">
-                        <div class="os-icon"><i class="fab fa-linux"></i></div>
-                        <span>Kali Linux</span>
-                    </div>
-                    <div class="os-item reveal-up" data-delay="200">
-                        <div class="os-icon"><i class="fab fa-ubuntu"></i></div>
-                        <span>Ubuntu</span>
-                    </div>
-                    <div class="os-item reveal-up" data-delay="300">
-                        <div class="os-icon"><i class="fab fa-linux"></i></div>
-                        <span>Linux Mint</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-bg-text">CONTACT</div>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">07.</span>
-                <h2 class="section-title split-text">
-                    <span class="word">Get In</span>
-                    <span class="word outline-text">Touch</span>
-                </h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="row g-5">
-                <div class="col-lg-5">
-                    <div class="contact-info reveal-left">
-                        <h3 class="contact-heading">Let's Work Together</h3>
-                        <p class="contact-text">
-                            I'm currently looking for new opportunities in the cybersecurity field. Whether you have a
-                            question or just want to say hi, I'll try my best to get back to you!
-                        </p>
-
-                        <div class="contact-cards">
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <span class="contact-label">Email</span>
-                                    <a
-                                        href="mailto:muzammil.pentester.921@gmail.com">muzammil.pentester.921@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <span class="contact-label">Phone</span>
-                                    <a href="tel:+923192025919">+92-319-2025919</a>
-                                </div>
-                            </div>
-                            <div class="contact-card">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <span class="contact-label">Location</span>
-                                    <span>Karachi, Pakistan</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="contact-social">
-                            <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" target="_blank"
-                                class="magnetic-btn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="https://github.com/muzammilkhan26" target="_blank" class="magnetic-btn">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank"
-                                class="magnetic-btn">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="contact-form-wrapper reveal-right">
-                        <form id="contactForm" class="contact-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">
-                                        <span class="label-text">Your Name</span>
-                                    </label>
-                                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
-                                    <span class="input-focus"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">
-                                        <span class="label-text">Your Email</span>
-                                    </label>
-                                    <input type="email" id="email" class="form-control" placeholder="john@example.com"
-                                        required>
-                                    <span class="input-focus"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">
-                                    <span class="label-text">Subject</span>
-                                </label>
-                                <input type="text" id="subject" class="form-control" placeholder="Project Discussion"
-                                    required>
-                                <span class="input-focus"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">
-                                    <span class="label-text">Message</span>
-                                </label>
-                                <textarea id="message" class="form-control" rows="5" placeholder="Your message here..."
-                                    required></textarea>
-                                <span class="input-focus"></span>
-                            </div>
-                            <button type="submit" class="btn-submit magnetic-btn" onclick="sendEmail(event)">
-                                <span class="btn-text">Send Message</span>
-                                <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                                <span class="btn-loading"><i class="fas fa-spinner fa-spin"></i></span>
-                            </button>
-                        </form>
-                        <script>
-                            function sendEmail(e) {
-                                e.preventDefault();
-                                const name = document.getElementById('name').value.trim();
-                                const email = document.getElementById('email').value.trim();
-                                const subject = document.getElementById('subject').value.trim();
-                                const message = document.getElementById('message').value.trim();
-
-                                if (!name || !email || !subject || !message) {
-                                    alert('Please fill in all fields before sending.');
-                                    return;
-                                }
-
-                                const body = `Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
-                                window.location.href = `mailto:muzammil.pentester.921@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-                            }
-                        </script>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="footer-logo">
-                        <span class="brand-bracket">{</span>MMK<span class="brand-bracket">}</span>
-                    </a>
-                    <p>Penetration Tester | Security Researcher</p>
-                </div>
-
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/muhammadmuzammilkhan92/" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/muzammilkhan26" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.facebook.com/muhammadmuzammilkhanattari/" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Muhammad Muzammil Khan. All Rights Reserved.</p>
-
-                <script>
-                    document.getElementById("year").textContent = new Date().getFullYear();
-                </script>
-
-                <p class="made-with">Made with <i class="fas fa-heart pulse"></i> in Karachi</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Back to Top -->
-    <button id="backToTop" class="magnetic-btn" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-        <svg class="progress-ring" width="50" height="50">
-            <circle class="progress-ring-circle" stroke="white" stroke-width="2" fill="transparent" r="22" cx="25"
-                cy="25" />
-        </svg>
-    </button>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+  </footer>
 </body>
-
 </html>
