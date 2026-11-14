@@ -39,6 +39,7 @@
 
     themeSwitch();
     copyEmail();
+    mailForm();
     activeNav();
     scrollChrome();
     reveal();
@@ -127,6 +128,20 @@
       }, function () {
         status.textContent = 'Could not copy. Select the address instead.';
       });
+    });
+  }
+
+  // ---- Contact form: opens a draft in the visitor's own email app ----
+  function mailForm() {
+    var form = document.getElementById('mailForm');
+    if (!form) return;
+    form.hidden = false;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var subject = document.getElementById('subject').value;
+      var body = document.getElementById('body').value;
+      window.location.href = 'mailto:' + form.getAttribute('data-to') +
+        '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     });
   }
 
